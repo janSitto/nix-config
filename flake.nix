@@ -136,7 +136,6 @@
           zerotier
           syncthing
           user-jvs
-
           sops
         ];
         specialArgs = {
