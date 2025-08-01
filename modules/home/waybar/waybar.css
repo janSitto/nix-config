@@ -1,0 +1,160 @@
+/*@define-color backgroundlight #000000;
+@define-color backgrounddark #000000;
+@define-color workspacesbackground1 #000000;
+@define-color workspacesbackground2 #222222;*/
+@define-color bordercolor #000000;
+@define-color textcolor1 #FFFFFF;
+@define-color textcolor2 #FFFFFF;
+@define-color textcolor3 #000000;
+@define-color iconcolor #000000;
+
+* {
+	border: none;
+	border-radius: 0px;
+	padding: 0;
+	margin: 0;
+	padding-left: 0px;
+	padding-right: 0px;
+	min-height: 0px;
+	color: #ffffff;
+	font-family: "SF Pro", "Symbols Nerd Font";
+	font-size: 13px;
+	font-weight: normal;
+	transition-property: background-color;
+	transition-duration: 0.5s;
+}
+
+#custom-appmenu {
+	background-color: @backgrounddark;
+	font-size: 13px;
+	color: @textcolor1;
+	border-radius: 0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 10px;
+	opacity: 0.8;
+	border: 0px solid @bordercolor;
+}
+
+#custom-appmenuicon {
+	font-size: 13px;
+	color: @textcolor;
+	margin: 0px 0px 0px 10px;
+}
+
+
+#workspaces {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px;
+	border-radius: 0px;
+	border: 0px;
+	font-weight: bold;
+	font-style: normal;
+	opacity: 0.8;
+	font-size: 13px;
+	color: @textcolor1;
+}
+
+#workspaces button {
+	padding: 0px 0px;
+	margin: 0px 0px;
+	border-radius: 1px;
+	border: 0px;
+	color: @textcolor1;
+	background-color: @workspacesbackground2;
+	transition: all 0.3s ease-in-out;
+	opacity: 0.4;
+}
+
+#workspaces button.active {
+	color: @textcolor1;
+	background: @workspacesbackground2;
+	border-radius: 0px;
+	min-width: 30px;
+	transition: all 0.3s ease-in-out;
+	opacity: 1;
+}
+
+#workspaces button:hover {
+	color: @textcolor1;
+	background: @workspacesbackground2;
+	border-radius: 0px;
+	opacity: 0.7;
+}
+
+#network {
+	background-color: @backgroundlight;
+	font-size: 13px;
+	color: @textcolor2;
+	border-radius: 1px;
+	padding: 2px 1px 0px 1px;
+	margin: 8px 1px 8px 0px;
+	opacity: 0.8;
+}
+
+#network.ethernet {
+	background-color: @backgroundlight;
+	color: @textcolor2;
+}
+
+#network.wifi {
+	background-color: @backgroundlight;
+	color: @textcolor2;
+}
+
+window#waybar {
+	background: #16191C;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #AAB2BF;
+}
+
+#custom-power {
+	margin: 0px 10px 0px 0px;
+}
+
+#pulseaudio {
+	background-color: @backgroundlight;
+	font-size: 13px;
+	color: @textcolor2;
+	border-radius: 13px;
+	padding: 2px 1px 0px 1px;
+	margin: 8px 1px 8px 0px;
+	opacity: 0.8;
+}
+
+#pulseaudio.muted {
+	background-color: @backgrounddark;
+	color: @textcolor1;
+}
+
+#battery {
+	background-color: @backgroundlight;
+	font-size: 13px;
+	color: @textcolor2;
+	border-radius: 13px;
+	padding: 2px 1px 0px 1px;
+	margin: 8px 1px 8px 0px;
+	opacity: 0.8;
+}
+
+#battery.charging,
+#battery.plugged {
+	color: @textcolor2;
+	background-color: @backgroundlight;
+}
+
+@keyframes blink {
+	to {
+		background-color: @backgroundlight;
+		color: @textcolor2;
+	}
+}
+
+#battery.critical:not(.charging) {
+	background-color: #f53c3c;
+	color: @textcolor3;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
