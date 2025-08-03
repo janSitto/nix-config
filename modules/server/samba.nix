@@ -13,7 +13,7 @@
                 #logging = systemd;
                 global.security = "user";
                 "${username}-private" = {
-                    path = "/data/samba/jvs";
+                    path = "/data/samba/${username}";
                     "valid users" = [ "${username}" ];
                     writable = true;
                     "create mask" = "0700";
