@@ -44,6 +44,7 @@
     gvfs
     glib
     udiskie
+    gnome-disk-utility
     rar
     unrar
     zip
