@@ -9,7 +9,6 @@
             };
         };
         timers.screen-off = {
-            enable = true;
             wantedBy = [ "timers.target" ];
             timerConfig.OnBootSec = "5m";
         };
