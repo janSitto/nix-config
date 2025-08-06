@@ -54,6 +54,7 @@
       nginx = import ./modules/server/nginx.nix;
       openssh = import ./modules/server/openssh.nix;
       samba = import ./modules/server/samba.nix;
+      screen-off = import ./modules/server/screen-off.nix;
       syncthing = import ./modules/server/syncthing.nix;
 
       # Overlays
@@ -135,6 +136,7 @@
           io-utils
           tailscale
           zerotier
+          screen-off
           syncthing
           user-jvs
           sops
