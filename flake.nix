@@ -91,6 +91,7 @@
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
           home
+          gnome
           hyprland
           sddm
           network
