@@ -5,10 +5,11 @@
             serviceConfig = {
                 Type = "oneshot";
                 User = "root";
-                ExecStart = pkgs.writeShellScript "screen-off" "echo 0 | sudo tee /sys/class/backlight/*/brightness";
+                ExecStart = pkgs.writeShellScript "screen-off" "echo 0 | tee /sys/class/backlight/*/brightness";
             };
         };
-        timers.scren-off = {
+        timers.screen-off = {
+            enable = true;
             wantedBy = [ "timers.target" ];
             timerConfig.OnBootSec = "5m";
         };
