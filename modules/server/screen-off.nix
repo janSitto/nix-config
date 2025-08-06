@@ -1,8 +1,8 @@
 {pkgs, ...}: {
     systemd = {
         services.screen-off = {
+            description = "Turn the screen off on server devices that has a fixed monitor.";
             serviceConfig = {
-                description = "Turn the screen off on server devices that has a fixed monitor.";
                 Type = "oneshot";
                 User = "root";
                 ExecStart = pkgs.writeShellScript "screen-off" "echo 0 | sudo tee /sys/class/backlight/*/brightness";
