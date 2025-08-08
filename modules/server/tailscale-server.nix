@@ -22,7 +22,7 @@
         description = "Setup tailscale NAT using secrets"; 
         after = [ "network-online.target" ];
         wantedBy = [ "multi-user.target" ];
-        requires = [ "sops-secrets-device.server.interface.lan.path.service" ];
+        requires = [ "network-online.target" "sops-secrets-device.server.interface.lan.path.service" ];
         serviceConfig = {
             Type = "oneshot";
             Environment = [
