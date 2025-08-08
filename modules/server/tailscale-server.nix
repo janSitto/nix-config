@@ -17,9 +17,9 @@
             internalInterfaces = [ "tailscale0" ];
             externalInterface = config.networking.defaultGatewayInterface;
         };
-        sysctl = {
-            "net.ipv4.ip_forward" = true;
-            "net.ipv6.conf.all.forwarding" = true;
-        };
+    };
+    boot.kernel.sysctl = {
+        "net.ipv4.ip_forward" = true;
+        "net.ipv6.conf.all.forwarding" = true;
     };
 }
