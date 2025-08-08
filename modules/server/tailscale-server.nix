@@ -1,7 +1,7 @@
 {pkgs, ...}: {
     services.tailscale = {
         enable = true;
-        useRoutingFeatures = "both"
+        useRoutingFeatures = "both";
     };
     networking = {
         firewall = {
