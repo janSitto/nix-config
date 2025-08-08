@@ -16,7 +16,21 @@
         nat = {
             enable = true;
             internalInterfaces = [ "tailscale0" ];
-            externalInterface = lib.trim (builtins.readFile config.sops.secrets.lanInterface.path);
+        };
+    };
+    systemd.services.nat-tailsacle = {
+        description = "Setup tailscale NAT using secrets"; 
+        after = [ "network-online.target" ];
+        wantedBy = [ "multi-user.target" ];
+        requires = [ "sops-secrets-device.server.interface.lan.service" ];
+        serviceConfig = {
+            Type = "oneshot";
+            Environment = [
+                "lanInterface=$(cat ${config.sops.secrets.lanInterface.path})"
+            ];
+            ExecStart = pkgs.writeShellScript "nat-tailscale" ''
+                ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -o "$lanInterface" -j MASQUERADE
+            '';
         };
     };
 }
