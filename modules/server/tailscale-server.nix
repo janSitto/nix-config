@@ -18,11 +18,11 @@
             internalInterfaces = [ "tailscale0" ];
         };
     };
-    systemd.services.nat-tailsacle = {
+    systemd.services.nat-tailscale = {
         description = "Setup tailscale NAT using secrets"; 
         after = [ "network-online.target" ];
         wantedBy = [ "multi-user.target" ];
-        requires = [ "sops-secrets-device.server.interface.lan.service" ];
+        requires = [ "sops-secrets-device.server.interface.lan.path.service" ];
         serviceConfig = {
             Type = "oneshot";
             Environment = [
