@@ -1,8 +1,14 @@
 {config, pkgs, lib, ...}: {
+
+    # In order to exit node to work you must enable forwarding
+    # As it expects to be unique, it is in the server configuration.nix, not here
+    # Look it up in ./hosts/server/configuration.nix if you got any doubts on how to do it
+
     services.tailscale = {
         enable = true;
         useRoutingFeatures = "both";
     };
+
     networking = {
         firewall = {
             trustedInterfaces = [ "tailscale0" ];
@@ -17,8 +23,5 @@
             internalInterfaces = [ "tailscale0" ];
         };
     };
-    boot.kernel.sysctl = {
-        "net.ipv4.ip_forward" = 1;
-        "net.ipv6.conf.all.forwarding" = 1;
-    };
+    
 }

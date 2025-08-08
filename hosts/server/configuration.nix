@@ -14,7 +14,10 @@
   networking.hostName = "nixos-server"; 
 
   # Networking
-  boot.kernel.sysctl."net.ipv4.ip_forward" = true;
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
+  };
   networking = {
     
     # Firewall 
@@ -28,7 +31,7 @@
     # NAT
     nat = {
       enable = true;
-      externalInterface = "eth0";
+      externalInterface = "enp7s0";
     };
 
   };
