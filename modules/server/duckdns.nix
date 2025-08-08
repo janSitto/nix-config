@@ -10,9 +10,9 @@
     lanDomain = { key = "duckdns/domain/lan"; };
     p2pDomain = { key = "duckdns/domain/p2p"; };
     vpnDomain = { key = "duckdns/domain/vpn"; };
-    lanInterface = { key = "duckdns/interface/lan"; };
-    p2pInterface = { key = "duckdns/interface/p2p"; };
-    vpnInterface = { key = "duckdns/interface/vpn"; };
+    lanInterface = { key = "device/server/interface/lan"; };
+    p2pInterface = { key = "device/server/interface/p2p"; };
+    vpnInterface = { key = "device/server/interface/vpn"; };
     ztrId = { key = "zerotier/id"; };
   };
 

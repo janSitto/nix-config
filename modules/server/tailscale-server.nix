@@ -1,4 +1,5 @@
-{config, pkgs, ...}: {
+{config, pkgs, lib, ...}: {
+    sops.secrets.lanInterface = { key = "device/server/interface/lan"; };
     services.tailscale = {
         enable = true;
         useRoutingFeatures = "both";
@@ -15,11 +16,7 @@
         nat = {
             enable = true;
             internalInterfaces = [ "tailscale0" ];
-            externalInterface = config.networking.defaultGatewayInterface;
+            externalInterface = lib.strings.stripString (builtins.readFile config.sops.secrets.lanInterface.path);
         };
-    };
-    boot.kernel.sysctl = {
-        "net.ipv4.ip_forward" = true;
-        "net.ipv6.conf.all.forwarding" = true;
     };
 }
