@@ -1,5 +1,4 @@
 {config, pkgs, lib, ...}: {
-    sops.secrets.lanInterface = { key = "device/server/interface/lan"; };
     services.tailscale = {
         enable = true;
         useRoutingFeatures = "both";
@@ -17,20 +16,9 @@
             enable = true;
             internalInterfaces = [ "tailscale0" ];
         };
-    };
-    systemd.services.nat-tailscale = {
-        description = "Setup tailscale NAT using secrets"; 
-        after = [ "network-online.target" ];
-        wantedBy = [ "multi-user.target" ];
-        requires = [ "network-online.target" "sops-secrets-device.server.interface.lan.path.service" ];
-        serviceConfig = {
-            Type = "oneshot";
-            Environment = [
-                "lanInterface=$(cat ${config.sops.secrets.lanInterface.path})"
-            ];
-            ExecStart = pkgs.writeShellScript "nat-tailscale" ''
-                ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -o "$lanInterface" -j MASQUERADE
-            '';
-        };
+        extraConfig = ''
+            net.ipv4.ip_forward = 1
+            net.ipv6.conf.all.forwarding = 1
+        '';
     };
 }
