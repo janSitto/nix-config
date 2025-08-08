@@ -16,7 +16,7 @@
         nat = {
             enable = true;
             internalInterfaces = [ "tailscale0" ];
-            externalInterface = lib.strings.stripString (builtins.readFile config.sops.secrets.lanInterface.path);
+            externalInterface = lib.trim (builtins.readFile config.sops.secrets.lanInterface.path);
         };
     };
 }
