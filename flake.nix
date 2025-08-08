@@ -55,6 +55,7 @@
       openssh = import ./modules/server/openssh.nix;
       samba = import ./modules/server/samba.nix;
       screen-off = import ./modules/server/screen-off.nix;
+      tailscale-server = import ./modules/server/tailscale-server.nix;
       syncthing = import ./modules/server/syncthing.nix;
 
       # Overlays
@@ -135,7 +136,7 @@
           openssh
           samba
           io-utils
-          tailscale
+          tailscale-server
           zerotier
           screen-off
           syncthing
