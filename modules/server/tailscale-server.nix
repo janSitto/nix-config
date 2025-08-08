@@ -16,9 +16,9 @@
             enable = true;
             internalInterfaces = [ "tailscale0" ];
         };
-        extraConfig = ''
-            net.ipv4.ip_forward = 1
-            net.ipv6.conf.all.forwarding = 1
-        '';
+    };
+    boot.kernel.sysctl-both = {
+        "net.ipv4.ip_forward" = 1;
+        "net.ipv6.conf.all.forwarding" = 1;
     };
 }
