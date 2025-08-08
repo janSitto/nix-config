@@ -112,6 +112,7 @@
           firefox
           fonts
           virtualisation
+          tailscale
           zerotier
           syncthing
           user-jvs
