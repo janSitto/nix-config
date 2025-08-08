@@ -5,7 +5,7 @@
         useRoutingFeatures = "both";
     };
     networking = {
-        ipForward = true;
+        ipv4.forwarding = true;
         ipv6.forwarding = true;
         firewall = {
             trustedInterfaces = [ "tailscale0" ];
