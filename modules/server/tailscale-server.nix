@@ -5,6 +5,8 @@
         useRoutingFeatures = "both";
     };
     networking = {
+        ipv4.forward = true;
+        ipv6.forward = true;
         firewall = {
             trustedInterfaces = [ "tailscale0" ];
             allowedUDPPorts = [ 41641 ];
