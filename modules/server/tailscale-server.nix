@@ -1,6 +1,6 @@
 {config, pkgs, lib, ...}: {
 
-    # In order to exit node to work you must enable forwarding
+    # In order to the exit node to work you must enable forwarding
     # As it expects to be unique, it is in the server configuration.nix, not here
     # Look it up in ./hosts/server/configuration.nix if you got any doubts on how to do it
 
@@ -23,5 +23,5 @@
             internalInterfaces = [ "tailscale0" ];
         };
     };
-    
+
 }
