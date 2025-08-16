@@ -7,9 +7,10 @@
       jack.enable = true;
     };
     environment.systemPackages = with pkgs; [ 
-      pavucontrol 
+      pavucontrol
       wireplumber
       libcanberra-gtk3
       rnnoise
+      pulseaudio-utils
     ];
 }
