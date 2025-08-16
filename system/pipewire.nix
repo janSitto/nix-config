@@ -11,6 +11,6 @@
       wireplumber
       libcanberra-gtk3
       rnnoise
-      pulseaudio-utils
+      pulseaudio
     ];
 }
