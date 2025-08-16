@@ -10,6 +10,6 @@
       pavucontrol 
       wireplumber
       libcanberra-gtk3
-      noise-suppression-for-voice
+      rnnoise
     ];
 }
