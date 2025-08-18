@@ -103,7 +103,7 @@
 
 window#waybar {
 	background: #16191C;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 1); /* Change this last value to modify the bar opacity */
 	color: #AAB2BF;
 }
 
