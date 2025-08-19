@@ -13,10 +13,14 @@
         firewall = {
             trustedInterfaces = [ "tailscale0" ];
             allowedUDPPorts = [ 41641 ];
-            #extraCommands = ''
-            #    iptables -A nixos-fw-forward -i tailscale0 -j ACCEPT
-            #    ip6tables -A nixos-fw-forward -i tailscale0 -j ACCEPT
-            #'';
+            extraCommands = ''
+                iptables -I FORWARD -i tailscale0 -j ACCEPT
+                ip6tables -I FORWARD -i tailscale0 -j ACCEPT
+            '';
+            extraStopCommands = ''
+                iptables -D FORWARD -i tailscale0 -j ACCEPT || true
+                ip6tables -D FORWARD -i tailscale0 -j ACCEPT || true
+            '';
         };
         nat = {
             enable = true;
