@@ -93,7 +93,8 @@
           exec-once = obsidian
 
           monitor = eDP-1, 1920x1080@120Hz, 0x0, 1.0
-          monitor = HDMI-A-1, 1920x1080@60Hz, 0x0, 1.0
+          monitor = HDMI-A-1, 1920x1080@60Hz, auto, 1.0
+          #monitor = HDMI-A-1, 1920x1080@60Hz, 0x0, 1.0
       	  #monitor = HDMI-A-1, 1920x1080@60, auto, 1, mirror, eDP-1
           
     '';
