@@ -1,5 +1,5 @@
 {pkgs, inputs, ...}: {
-    imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+    imports = [ inputs.nixvim.homeModules.nixvim ];
     programs.nixvim = {
 
         enable = true;
