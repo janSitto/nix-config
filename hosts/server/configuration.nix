@@ -14,7 +14,7 @@
   networking.hostName = "nixos-server"; 
 
   # Networking
-  boot.kernel.sysctl = {
+  boot.kernel.sysctl = { #This is needed for the tailscale-server.nix exit node to work
     "net.ipv4.ip_forward" = 1;
     "net.ipv6.conf.all.forwarding" = 1;
   };

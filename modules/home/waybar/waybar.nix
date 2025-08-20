@@ -125,9 +125,10 @@
           };
           format = "{icon}";
           format-alt = "{icon} {capacity}%";
-          format-charging = " {capacity}%";
+          #format-charging = " {capacity}%";
           #format-charging-alt = "";
-          format-plugged = " {capacity}%";
+          format-plugged = " ";
+          format-plugged-alt = " {capacity}%";
           format-icons = [
             " "
             " "
