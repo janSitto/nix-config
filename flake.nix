@@ -58,28 +58,26 @@
       tailscale-server = import ./modules/server/tailscale-server.nix;
       syncthing = import ./modules/server/syncthing.nix;
 
-      # Overlays
-
       # Secrets/Secret Keeping/Cryptography
-      sops = import ./system/sops.nix;
+      sops = import ./modules/system/sops.nix;
 
       # System
-      grub = import ./system/bootloaders/grub.nix;
-      sddm = import ./system/display-managers/sddm.nix;
-      nvidia = import ./system/graphics/nvidia.nix;
-      bluetooth = import ./system/bluetooth.nix;
-      garbage-collector = import ./system/garbage-collector.nix;
-      io-utils = import ./system/io-utils.nix;
-      pipewire = import ./system/pipewire.nix;
-      power = import ./system/power.nix;
-      network = import ./system/network/network.nix;
-      localhost = import ./system/network/localhost.nix;
-      security = import ./system/security.nix;
-      timezone = import ./system/timezone.nix;
-      xdg = import ./system/xdg.nix;
-      xserver = import ./system/xserver.nix;
-      tailscale = import ./system/network/tailscale.nix;
-      zerotier = import ./system/network/zerotier.nix;
+      grub = import ./modules/system/bootloaders/grub.nix;
+      sddm = import ./modules/system/display-managers/sddm.nix;
+      nvidia = import ./modules/system/graphics/nvidia.nix;
+      bluetooth = import ./modules/system/bluetooth.nix;
+      garbage-collector = import ./modules/system/garbage-collector.nix;
+      io-utils = import ./modules/system/io-utils.nix;
+      pipewire = import ./modules/system/pipewire.nix;
+      power = import ./modules/system/power.nix;
+      network = import ./modules/system/network/network.nix;
+      localhost = import ./modules/system/network/localhost.nix;
+      security = import ./modules/system/security.nix;
+      timezone = import ./modules/system/timezone.nix;
+      xdg = import ./modules/system/xdg.nix;
+      xserver = import ./modules/system/xserver.nix;
+      tailscale = import ./modules/system/network/tailscale.nix;
+      zerotier = import ./modules/system/network/zerotier.nix;
 
       # Users
       user-jvs = import ./users/jvs.nix;
