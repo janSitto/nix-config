@@ -16,7 +16,7 @@
     # Sem Categoria
     wine
     wayvnc
-    bluej
+    gnupg
     docker
 
     # Browsers
