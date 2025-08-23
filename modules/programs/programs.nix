@@ -17,9 +17,9 @@
     wine
     wayvnc
     gnupg
-    docker
     vlc
     mpv
+    pavucontrol
 
     # Browsers
     brave
@@ -69,6 +69,7 @@
     libreoffice
 
     # Dev
+    docker
     greenfoot
     jdk
     jdk8
