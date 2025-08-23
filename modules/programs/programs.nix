@@ -38,7 +38,6 @@
     asciiquarium
     shell-gpt
     wget
-    yewtube
 
     # Arquivos
     #xfce.thunar
