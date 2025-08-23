@@ -18,6 +18,8 @@
     wayvnc
     gnupg
     docker
+    vlc
+    mpv
 
     # Browsers
     brave
@@ -36,6 +38,7 @@
     asciiquarium
     shell-gpt
     wget
+    yewtube
 
     # Arquivos
     #xfce.thunar
@@ -115,11 +118,13 @@
       );
     })
 
-    # 3D
+    # 3D e 2D
     freecad-wayland
     librecad
     cura-appimage
     orca-slicer
+    inkscape
+    blender
 
   ];
 }
