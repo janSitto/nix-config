@@ -27,7 +27,7 @@
         "$mod, SPACE, exec, wofi"
         "$mod, A, exec, nautilus"
         #"$mod, F, exec, firefox"
-        "$mod, Z, exec, zen-browser"
+        "$mod, Z, exec, zen-twilight"
         "$mod, T, exec, kitty"
         "$mod, O, exec, obsidian"
         #"$mod, S, exec, steam"
