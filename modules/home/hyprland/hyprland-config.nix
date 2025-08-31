@@ -48,6 +48,7 @@
         
         ", PRINT, exec, hyprshot -m output"
 
+        "$act, Tab, cyclenext,"
         "$act, W, movefocus, u"
         "$act, A, movefocus, l"
         "$act, S, movefocus, d"
