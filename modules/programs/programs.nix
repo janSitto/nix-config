@@ -21,9 +21,6 @@
     mpv
     pavucontrol
 
-    # Browsers
-    brave
-    tor-browser
     inputs.zen-browser.packages."${system}".twilight
 
     # Terminal
@@ -118,7 +115,7 @@
       );
     })
 
-    # 3D e 2D
+    # 3D & 2D
     freecad-wayland
     librecad
     cura-appimage

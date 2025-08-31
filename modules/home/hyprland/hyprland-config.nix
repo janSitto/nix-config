@@ -26,7 +26,8 @@
         # Abrir aplicativos
         "$mod, SPACE, exec, wofi"
         "$mod, A, exec, nautilus"
-        "$mod, F, exec, firefox"
+        #"$mod, F, exec, firefox"
+        "$mod, Z, exec, zen-browser"
         "$mod, T, exec, kitty"
         "$mod, O, exec, obsidian"
         #"$mod, S, exec, steam"
@@ -47,6 +48,8 @@
 
         ", F6, exec, brightnessctl set 10%-"
         ", F7, exec, brightnessctl set 10%+"
+        ", F8, exec, hyprctl keyword monitor HDMI-A-1, 1920x1080@60, auto, 1, mirror, eDP-1"
+        
         #"$act, C, exec, brightnessctl set 5%"
         #"$act, V, exec, brightnessctl set 100%"
 
