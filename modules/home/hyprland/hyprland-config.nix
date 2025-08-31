@@ -44,15 +44,10 @@
         ", F6, exec, brightnessctl set 10%-"
         ", F7, exec, brightnessctl set 10%+"
 
-        "F8, M, exec, hyprctl keyword monitor HDMI-A-1, 1920x1080@60, auto, 1, mirror, eDP-1"
-        "F8, W, exec, hyprctl keyword monitor HDMI-A-1, 1920x1080@60Hz, 0x0, 1.0"
+        "F8, exec, hyprctl keyword monitor HDMI-A-1, 1920x1080@60, auto, 1, mirror, eDP-1"
         
-        "$act, C, exec, brightnessctl set 5%"
-        "$act, V, exec, brightnessctl set 100%"
-
         ", PRINT, exec, hyprshot -m output"
 
-        #"$act, Tab, cyclenext,"
         "$act, W, movefocus, u"
         "$act, A, movefocus, l"
         "$act, S, movefocus, d"
