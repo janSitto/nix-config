@@ -18,7 +18,6 @@
             background = "dark";
         };
 
-
         opts = {
             number = true;
             relativenumber = true;
