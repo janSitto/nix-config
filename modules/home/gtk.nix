@@ -13,8 +13,8 @@
       size = 11;
     };
     theme = {
-      name = "Gruvbox-Material-Dark-Hard";
-      package = pkgs.gruvbox-material-gtk-theme;
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
     iconTheme = {
       name = "oomox-gruvbox-dark";
