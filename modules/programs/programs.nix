@@ -65,6 +65,8 @@
     libreoffice
 
     # Dev
+    openssl
+    pkg-config
     docker
     greenfoot
     jdk

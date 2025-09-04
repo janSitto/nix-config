@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}: {
+{lib, pkgs, inputs, ...}: {
     imports = [ inputs.nixvim.homeModules.nixvim ];
     programs.nixvim = {
 
@@ -7,9 +7,18 @@
         viAlias = true;
         vimAlias = true;
 
+        nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
+            "copilot.vim" 
+        ];
+
         extraPlugins = with pkgs.vimPlugins; [ 
             gruvbox-material 
+            copilot-vim
         ];
+
+        plugins = {
+            copilot-vim.enable = true;
+        };
 
         colorscheme = "gruvbox-material";
         globals = {
@@ -20,7 +29,7 @@
 
         opts = {
             number = true;
-            relativenumber = true;
+            relativenumber = false;
             shiftwidth = 2;
         };
 
