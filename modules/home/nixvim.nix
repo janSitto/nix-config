@@ -7,17 +7,17 @@
         viAlias = true;
         vimAlias = true;
 
-        nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
-            "copilot.vim" 
-        ];
+        #nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
+        #    "copilot.vim" 
+        #];
 
         extraPlugins = with pkgs.vimPlugins; [ 
             gruvbox-material 
-            copilot-vim
+            #copilot-vim
         ];
 
         plugins = {
-            copilot-vim.enable = true;
+            #copilot-vim.enable = true;
         };
 
         colorscheme = "gruvbox-material";

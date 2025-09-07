@@ -116,7 +116,6 @@
           syncthing
           user-jvs
           sops
-          steam
         ];
         specialArgs = {
           system = "x86_64-linux";
