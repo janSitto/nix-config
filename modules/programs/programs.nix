@@ -54,7 +54,7 @@
     gpa
 
     # Jogos
-    #prismlauncher
+    prismlauncher
     #r2modman
     #lumafly
     #ckan
@@ -65,12 +65,14 @@
     libreoffice
 
     # Dev
+    nasm
     openssl
     pkg-config
     docker
     greenfoot
     jdk
     jdk8
+    openjdk8
     jdk11
     jdk21
     openjfx21
