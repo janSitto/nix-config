@@ -55,7 +55,7 @@
 
     # Jogos
     prismlauncher
-    #r2modman
+    r2modman
     #lumafly
     #ckan
 
