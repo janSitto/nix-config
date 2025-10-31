@@ -1,7 +1,7 @@
 {pkgs, ...}: {
     systemd = {
         services.screen-off = {
-            description = "Turn the screen off on server devices that has a fixed monitor.";
+            description = "Turn the screen off on server devices that have a fixed monitor.";
             serviceConfig = {
                 Type = "oneshot";
                 User = "root";

@@ -65,6 +65,7 @@
     libreoffice
 
     # Dev
+    arduino
     nasm
     openssl
     pkg-config
@@ -89,6 +90,8 @@
     android-tools
     android-studio
     jetbrains.idea-community-bin
+    jetbrains.clion
+    jetbrains.pycharm-community-bin
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = (

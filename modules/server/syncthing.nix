@@ -14,7 +14,7 @@
         overrideDevices = true;     # overrides any devices added or deleted through the WebUI
         overrideFolders = true;     # overrides any folders added or deleted through the WebUI
         settings = {
-            devices = {
+            devices = { # Dont even try to, ill just deny it :)
                 "nixos" = { id = "7GU3YVI-3HS4JIG-WYGPVFK-HL6BZJZ-JYNMNW6-7MHDKGT-VZYWC5U-D6G4OA2"; };
                 "nixos-server" = { id = "OBCAOYX-7HFXDTY-KS7C4U4-CSLHE2Y-XJZ26N7-AO57C2M-JAHTMAC-YN7RIA5"; };
                 "phone" = { id = "FVFZWJJ-3GS722X-VMQUZQE-5KXCGJR-DNJD3NH-BYIYH6K-GEOTPKG-VZBO5QV"; };
