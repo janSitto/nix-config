@@ -85,7 +85,7 @@
     rustc
     cargo
     gcc
-    qt6.full
+    #qt6.full # "qt6.full has been removed. Please use individual packages instead."
     scrcpy
     android-tools
     android-studio
