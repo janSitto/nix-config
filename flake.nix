@@ -50,10 +50,10 @@
       nixvim = import ./modules/home/nixvim.nix;
       fonts = import ./modules/fonts.nix;
       programs = import ./modules/programs/programs.nix;
+      qt = import ./modules/programs/qt.nix;
       firefox = import ./modules/programs/firefox.nix;
       steam = import ./modules/programs/steam.nix;
       virtualisation = import ./modules/virtualisation.nix;
-      qt = import ./modules/system/qt.nix;
       # Server Stuff
       duckdns = import ./modules/server/duckdns.nix;
       nginx = import ./modules/server/nginx.nix;
