@@ -40,7 +40,6 @@
       waybar = import ./modules/home/waybar/waybar.nix;
       wofi = import ./modules/home/wofi/wofi.nix;
       gtk = import ./modules/home/gtk.nix;
-      qt = import ./modules/home/qt.nix;
       gnome = import ./modules/home/gnome/gnome.nix;
       plasma = import ./modules/home/plasma/plasma.nix;
       hyprland = import ./modules/home/hyprland/hyprland.nix;
@@ -54,6 +53,7 @@
       firefox = import ./modules/programs/firefox.nix;
       steam = import ./modules/programs/steam.nix;
       virtualisation = import ./modules/virtualisation.nix;
+      qt = import ./modules/system/qt.nix;
       # Server Stuff
       duckdns = import ./modules/server/duckdns.nix;
       nginx = import ./modules/server/nginx.nix;
@@ -104,6 +104,7 @@
           grub
           timezone
           xdg
+          qt
           xserver
           security
           nvidia

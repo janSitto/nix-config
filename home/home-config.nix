@@ -15,7 +15,6 @@
     ../modules/home/waybar/waybar.nix
     ../modules/home/wofi/wofi.nix
     ../modules/home/gtk.nix
-    ../modules/home/qt.nix
     ../modules/home/kitty.nix
     ../modules/home/helix.nix
     ../modules/home/nixvim.nix
