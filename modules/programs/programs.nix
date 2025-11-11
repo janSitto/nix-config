@@ -20,6 +20,7 @@
     vlc
     mpv
     pavucontrol
+    winetricks
 
     inputs.zen-browser.packages."${system}".twilight
 
@@ -54,6 +55,7 @@
     gpa
 
     # Jogos
+    lutris
     prismlauncher
     r2modman
     #lumafly
@@ -88,7 +90,7 @@
     #qt6.full # "qt6.full has been removed. Please use individual packages instead."
     scrcpy
     android-tools
-    android-studio
+    #android-studio
     jetbrains.idea-community-bin
     jetbrains.clion
     jetbrains.pycharm-community-bin
@@ -129,6 +131,7 @@
     orca-slicer
     inkscape
     blender
+    kicad
 
   ];
 }

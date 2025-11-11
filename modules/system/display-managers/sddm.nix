@@ -1,34 +1,30 @@
-{pkgs, lib, ...}: {
+{inputs, pkgs, lib, ...}: let
 
-  #users.users.sddm = {
-  #  isSystemUser = true;
-  #  group = "sddm";
-  #};
-  #users.groups.sddm.members = [];
+   sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+      theme = "rei"; 
+   };
 
+in {
+
+  # This module needs the QT .nix file or qt.enable = true;
   environment.systemPackages = with pkgs; [
     kdePackages.sddm
-    (catppuccin-sddm.override {
-      flavor = "macchiato";
-      font = "Sf Pro";
-      fontSize = "9";
-      #background = "${wallpaper}";
-      loginBackground = true;
-    })
+    sddm-theme 
+    sddm-theme.test
   ];
 
-  services.displayManager = {
-    #defaultSession = "hyprland";
-    sddm = {
+  services.displayManager.sddm = {
+      package = pkgs.kdePackages.sddm;
       enable = true;
-      wayland.enable = false;
-      theme = "catppuccin-macchiato";
-      package = lib.mkForce pkgs.kdePackages.sddm;
-    };
-  };
+      theme = sddm-theme.pname;
+      extraPackages = sddm-theme.propagatedBuildInputs;
+      settings = {
+        General = {
+          GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
+          InputMethod = "qtvirtualkeyboard";
+        };
+      };
+   };
 
-  #systemd.tmpfiles.rules = [
-  #  "d /run/sddm 0755 sddm sddm -"
-  #];
 
 }
