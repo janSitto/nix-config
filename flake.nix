@@ -16,6 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+    };
+
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +34,7 @@
 
   };
   
-  outputs = { self, nixpkgs, home-manager, sops-nix, nixvim, zen-browser, ...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, silentSDDM, grub2-themes, nixvim, zen-browser, ...}@inputs: {
     nixosModules = {
 
       # Home-manager & Home config
@@ -95,6 +99,7 @@
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
+          grub2-themes.nixosModules.default
           home
           gnome
           hyprland

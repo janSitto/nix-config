@@ -1,20 +1,12 @@
-{inputs, pkgs, lib, ...}: let
-
+{pkgs, inputs, ...}: let
    sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
-      theme = "rei"; 
+      theme = "default"; 
    };
-
 in {
-
-  # This module needs the QT .nix file or qt.enable = true;
-  environment.systemPackages = with pkgs; [
-    kdePackages.sddm
-    sddm-theme 
-    sddm-theme.test
-  ];
-
-  services.displayManager.sddm = {
-      package = pkgs.kdePackages.sddm;
+   environment.systemPackages = [sddm-theme sddm-theme.test];
+   qt.enable = true;
+   services.displayManager.sddm = {
+      package = pkgs.kdePackages.sddm; 
       enable = true;
       theme = sddm-theme.pname;
       extraPackages = sddm-theme.propagatedBuildInputs;
@@ -25,6 +17,4 @@ in {
         };
       };
    };
-
-
 }
