@@ -30,7 +30,7 @@
 
   };
   
-  outputs = { self, nixpkgs, home-manager, sops-nix, silentSDDM, grub2-themes, nixvim, zen-browser, ...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, silentSDDM, nixvim, zen-browser, ...}@inputs: {
     nixosModules = {
 
       # Home-manager & Home config
