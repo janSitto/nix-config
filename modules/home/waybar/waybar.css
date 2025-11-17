@@ -1,16 +1,7 @@
-/*@define-color backgroundlight #000000;
-@define-color backgrounddark #000000;
-@define-color workspacesbackground1 #000000;
-@define-color workspacesbackground2 #222222;*/
-@define-color bordercolor #000000;
-@define-color textcolor1 #FFFFFF;
-@define-color textcolor2 #FFFFFF;
-@define-color textcolor3 #000000;
-@define-color iconcolor #000000;
 
 * {
 	border: none;
-	border-radius: 0px;
+	border-radius: 13px;
 	padding: 0;
 	margin: 0;
 	padding-left: 0px;
@@ -25,19 +16,19 @@
 }
 
 #custom-appmenu {
-	background-color: @backgrounddark;
+	background-color: #16191C;
 	font-size: 13px;
-	color: @textcolor1;
+	color: #ffffff;
 	border-radius: 0px;
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 10px;
 	opacity: 0.8;
-	border: 0px solid @bordercolor;
+	border: 1px solid #000000;
 }
 
 #custom-appmenuicon {
 	font-size: 13px;
-	color: @textcolor;
+	color: #ffffff;
 	margin: 0px 0px 0px 10px;
 }
 
@@ -51,7 +42,7 @@
 	font-style: normal;
 	opacity: 0.8;
 	font-size: 13px;
-	color: @textcolor1;
+	color: #ffffff;
 }
 
 #workspaces button {
@@ -59,32 +50,32 @@
 	margin: 0px 0px;
 	border-radius: 1px;
 	border: 0px;
-	color: @textcolor1;
-	background-color: @workspacesbackground2;
+	color: #ffffff;
+	background-color: #16191C;
 	transition: all 0.3s ease-in-out;
 	opacity: 0.4;
 }
 
 #workspaces button.active {
-	color: @textcolor1;
-	background: @workspacesbackground2;
-	border-radius: 0px;
+	color: #ffffff;
+	background: #16191C;
+	border-radius: 13px;
 	min-width: 30px;
 	transition: all 0.3s ease-in-out;
 	opacity: 1;
 }
 
 #workspaces button:hover {
-	color: @textcolor1;
-	background: @workspacesbackground2;
+	color: #ffffff;
+	background: #16191C;
 	border-radius: 0px;
 	opacity: 0.7;
 }
 
 #network {
-	background-color: @backgroundlight;
+	background-color: #16191C;
 	font-size: 13px;
-	color: @textcolor2;
+	color: #ffffff;
 	border-radius: 1px;
 	padding: 2px 1px 0px 1px;
 	margin: 8px 1px 8px 0px;
@@ -92,18 +83,18 @@
 }
 
 #network.ethernet {
-	background-color: @backgroundlight;
-	color: @textcolor2;
+	background-color: #16191C;
+	color: #ffffff;
 }
 
 #network.wifi {
-	background-color: @backgroundlight;
-	color: @textcolor2;
+	background-color: #16191C;
+	color: #ffffff;
 }
 
 window#waybar {
 	background: #16191C;
-	background-color: rgba(0, 0, 0, 1); /* Change this last value to modify the bar opacity */
+	background-color: rgba(0, 0, 0, 0.8); /* Change this last value to modify the bar opacity */
 	color: #AAB2BF;
 }
 
@@ -112,9 +103,9 @@ window#waybar {
 }
 
 #pulseaudio {
-	background-color: @backgroundlight;
+	background-color: #16191C;
 	font-size: 13px;
-	color: @textcolor2;
+	color: #ffffff;
 	border-radius: 13px;
 	padding: 2px 1px 0px 1px;
 	margin: 8px 1px 8px 0px;
@@ -122,14 +113,14 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-	background-color: @backgrounddark;
-	color: @textcolor1;
+	background-color: #16191C;
+	color: #ffffff;
 }
 
 #battery {
-	background-color: @backgroundlight;
+	background-color: #16191C;
 	font-size: 13px;
-	color: @textcolor2;
+	color: #ffffff;
 	border-radius: 13px;
 	padding: 2px 1px 0px 1px;
 	margin: 8px 1px 8px 0px;
@@ -138,20 +129,20 @@ window#waybar {
 
 #battery.charging,
 #battery.plugged {
-	color: @textcolor2;
-	background-color: @backgroundlight;
+	color: #ffffff;
+	background-color: #16191C;
 }
 
 @keyframes blink {
 	to {
-		background-color: @backgroundlight;
-		color: @textcolor2;
+		background-color: #16191C;
+		color: #ffffff;
 	}
 }
 
 #battery.critical:not(.charging) {
-	background-color: #f53c3c;
-	color: @textcolor3;
+	background-color: #16191C;
+	color: #f53c3c;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;

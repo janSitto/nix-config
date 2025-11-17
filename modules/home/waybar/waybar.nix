@@ -20,7 +20,7 @@
           "custom/appmenuicon"
           "hyprland/workspaces"
         ];
-        modules-center = [ "clock" ];
+        modules-center = [];
         modules-right = [
           "cpu"
           "memory"
@@ -54,7 +54,7 @@
           tooltip = false;
         };
         clock = {
-          format = "{:%d.%m.%Y | %H:%M}";
+          format = "{:%H:%M}";
         };
         cpu = {
           format = " ";
