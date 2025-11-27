@@ -72,6 +72,7 @@
     openssl
     pkg-config
     docker
+    netbeans
     greenfoot
     jdk
     jdk8

@@ -1,7 +1,7 @@
 
 * {
 	border: none;
-	border-radius: 13px;
+	border-radius: 0px;
 	padding: 0;
 	margin: 0;
 	padding-left: 0px;
@@ -16,14 +16,14 @@
 }
 
 #custom-appmenu {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	font-size: 13px;
 	color: #ffffff;
 	border-radius: 0px;
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 10px;
 	opacity: 0.8;
-	border: 1px solid #000000;
+	border: 0px solid rgba(0, 0, 0, 0.0);
 }
 
 #custom-appmenuicon {
@@ -51,15 +51,15 @@
 	border-radius: 1px;
 	border: 0px;
 	color: #ffffff;
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	transition: all 0.3s ease-in-out;
 	opacity: 0.4;
 }
 
 #workspaces button.active {
 	color: #ffffff;
-	background: #16191C;
-	border-radius: 13px;
+	background: rgba(0, 0, 0, 0.0);
+	border-radius: 0px;
 	min-width: 30px;
 	transition: all 0.3s ease-in-out;
 	opacity: 1;
@@ -67,13 +67,13 @@
 
 #workspaces button:hover {
 	color: #ffffff;
-	background: #16191C;
+	background: rgba(0, 0, 0, 0.0);
 	border-radius: 0px;
 	opacity: 0.7;
 }
 
 #network {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	font-size: 13px;
 	color: #ffffff;
 	border-radius: 1px;
@@ -83,17 +83,17 @@
 }
 
 #network.ethernet {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	color: #ffffff;
 }
 
 #network.wifi {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	color: #ffffff;
 }
 
 window#waybar {
-	background: #16191C;
+	background: rgba(0, 0, 0, 0.0);
 	background-color: rgba(0, 0, 0, 0.8); /* Change this last value to modify the bar opacity */
 	color: #AAB2BF;
 }
@@ -103,7 +103,7 @@ window#waybar {
 }
 
 #pulseaudio {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	font-size: 13px;
 	color: #ffffff;
 	border-radius: 13px;
@@ -113,12 +113,12 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	color: #ffffff;
 }
 
 #battery {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	font-size: 13px;
 	color: #ffffff;
 	border-radius: 13px;
@@ -130,18 +130,18 @@ window#waybar {
 #battery.charging,
 #battery.plugged {
 	color: #ffffff;
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 }
 
 @keyframes blink {
 	to {
-		background-color: #16191C;
+		background-color: rgba(0, 0, 0, 0.0);
 		color: #ffffff;
 	}
 }
 
 #battery.critical:not(.charging) {
-	background-color: #16191C;
+	background-color: rgba(0, 0, 0, 0.0);
 	color: #f53c3c;
 	animation-name: blink;
 	animation-duration: 0.5s;

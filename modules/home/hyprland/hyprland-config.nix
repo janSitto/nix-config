@@ -48,6 +48,7 @@
         
         ", PRINT, exec, hyprshot -m output"
 
+        "$act, SPACE, exec, pgrep waybar && pkill waybar || waybar &"
         "$act, Tab, cyclenext,"
         "$act, W, movefocus, u"
         "$act, A, movefocus, l"

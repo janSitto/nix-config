@@ -1,7 +1,10 @@
 {pkgs, ...}: {
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+    hyprlock.enable = true;
   };
 }

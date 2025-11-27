@@ -2,7 +2,7 @@
 let
 
   userpfp = ./userpfp.jpg;
-  wallpaper = ./wallpaper.jpg;
+  wallpaper = ./wallpaper.png;
 
 in
 {
