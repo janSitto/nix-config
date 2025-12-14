@@ -20,7 +20,9 @@
           "custom/appmenuicon"
           "hyprland/workspaces"
         ];
-        modules-center = [];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
           "group/hardware"
           "pulseaudio"
@@ -159,7 +161,7 @@
         };
         "custom/power" = {
           format = "3";
-          on-click = "${pkgs.systemd}/bin/systemctl poweroff";
+          on-click = "${pkgs.systemd}/bin/systemctl poweroff -f";
           on-click-right = "hyprlock";
           tooltip-format = "Left: Power menu\nRight: Lock screen";
         };

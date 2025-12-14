@@ -34,13 +34,11 @@
     cbonsai
     cmatrix
     asciiquarium
-    shell-gpt
     wget
 
     # Arquivos
-    #xfce.thunar
-    #xfce.thunar-volman
     nautilus
+    yazi
     gvfs
     glib
     udiskie
@@ -72,8 +70,6 @@
     openssl
     pkg-config
     docker
-    netbeans
-    greenfoot
     jdk
     jdk8
     openjdk8

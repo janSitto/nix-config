@@ -25,12 +25,12 @@
 
         # Abrir aplicativos
         "$mod, SPACE, exec, wofi"
-        "$mod, A, exec, nautilus"
+        "$mod, A, exec, kitty yazi"
         #"$mod, F, exec, firefox"
         "$mod, Z, exec, zen-twilight"
         "$mod, T, exec, kitty"
         "$mod, O, exec, obsidian"
-        #"$mod, S, exec, steam"
+        "$mod, S, exec, steam"
 
         # Funcoes do sistema
 
@@ -88,6 +88,7 @@
     extraConfig = ''
 
           exec-once = obsidian
+          exec-once = zen-twilight
 
           monitor = eDP-1, 1920x1080@120Hz, 0x0, 1.0
           monitor = HDMI-A-1, 1920x1080@60Hz, auto, 1.0

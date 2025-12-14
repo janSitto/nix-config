@@ -154,6 +154,28 @@
           inherit inputs;
         };
       };
+      stick = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = with self.nixosModules; [
+          ./hosts/stick/configuration.nix
+          home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
+          home
+          gnome
+          sddm
+          netwrok
+          grub
+          tailscale
+          io-utils
+          user-jvs
+          sops
+        ];
+        specialArgs = {
+          system = "x86_64-linux";
+          username = "jvs";
+          inherit inputs;
+        };
+      };
     };  
   };
 }
