@@ -9,8 +9,8 @@
         enable = true;
         group = "users";
         user = "${username}";
-        dataDir = "/home/${username}/Documents";
-        configDir = "/home/${username}/.config/syncthing";
+        dataDir = "/data/home/${username}/Documents";
+        configDir = "/data/home/${username}/.config/syncthing";
         overrideDevices = true;     # overrides any devices added or deleted through the WebUI
         overrideFolders = true;     # overrides any folders added or deleted through the WebUI
         settings = {
@@ -21,7 +21,7 @@
             };
             folders = {
                 "Documents" = {         # Name of folder in Syncthing, also the folder ID
-                    path = "/home/${username}/Documents";    # Which folder to add to Syncthing
+                    path = "/data/home/${username}/Documents";    # Which folder to add to Syncthing
                     devices = [ "nixos" "nixos-server" "phone" ];      # Which devices to share the folder with
                 };
             };
@@ -33,8 +33,8 @@
     };
 
     systemd.tmpfiles.rules = [
-        "d /home/${username}/.config 0755 ${username} users -"
-        "d /home/${username}/.config/syncthing 0755 ${username} users -"
+        "d /data/home/${username}/.config 0755 ${username} users -"
+        "d /data/home/${username}/.config/syncthing 0755 ${username} users -"
     ];
 
 }
