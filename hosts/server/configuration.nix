@@ -36,6 +36,11 @@
 
   };
 
+  fileSystems. "/home" = {
+    device = "/data/home";
+    options = [ "bind" ];
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
