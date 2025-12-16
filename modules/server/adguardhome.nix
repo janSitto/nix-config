@@ -2,7 +2,8 @@
 {
 
     sops.secrets = {
-        user-password = { key = "user/password"; };
+        adguardhome-password = { key = "adguardhome/password"; };
+        owner = "adguardhome";
     };
 
     networking.firewall.allowedTCPPorts = [ 3003 ];
@@ -40,21 +41,10 @@
             ];
         };
     }; 
-    systemd.services.adguardhome = {
-        serviceConfig.LoadCredential = [
-        "password: ${config.sops.secrets.user-password. path}"
-        ];
-        
-        preStart = lib.mkAfter ''
-        if [ -n "$CREDENTIALS_DIRECTORY" ]; then
-            PASSWORD=$(cat "$CREDENTIALS_DIRECTORY/password")
-        else
-            PASSWORD=$(cat ${config.sops.secrets.user-password.path})
-        fi
-        
+    systemd.services.adguardhome. preStart = lib.mkAfter ''
+        PASSWORD=$(cat ${config.sops.secrets.adguardhome-password.path})
         if [ -f AdGuardHome.yaml ]; then
             ${pkgs.yq-go}/bin/yq eval '.users = [{"name": "${username}", "password": "'$PASSWORD'"}]' -i AdGuardHome.yaml
         fi
-        '';
-    };
+    '';
 }
