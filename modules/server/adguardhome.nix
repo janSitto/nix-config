@@ -36,8 +36,8 @@
             ];
             users = [
                 { 
-                    name = "null";
-                    password = "null";
+                    name = "${username}";
+                    password = "$2a$12$YJ0BanFAoriEvCsjneCkEO69IpBlZAEUhAhMXjtdBCYNyKGUr3/TC";
                 }
             ];
         };
