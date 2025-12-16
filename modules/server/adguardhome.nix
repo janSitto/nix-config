@@ -36,8 +36,8 @@
             ];
             users = [
                 { 
-                    name = "admin";
-                    password = "";
+                    name = "null";
+                    password = "null";
                 }
             ];
         };
