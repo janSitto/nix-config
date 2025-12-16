@@ -1,10 +1,6 @@
 {config, lib, pkgs, username, ...}: 
 {
 
-    sops.secrets.adguardhome-password = { 
-        key = "adguardhome/password"; 
-    };
-
     networking.firewall.allowedTCPPorts = [ 3003 ];
     services.adguardhome = {
         enable = true;
@@ -38,17 +34,16 @@
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
             ];
+            users = [];
+            http = {
+                pprof = {
+                    enabled = false;
+                };
+            };
         };
+    };
+    systemd.services.adguardhome.serviceConfig = {
+        ReadOnlyPaths = [ "/var/lib/AdGuardHome/AdGuardHome.yaml" ];
     }; 
-    
-    systemd.services.adguardhome.serviceConfig. ExecStartPre = lib. mkForce [
-        "${config.systemd.package}/bin/systemd-tmpfiles --create --remove --boot --prefix /run/AdGuardHome"
-        "${pkgs.adguardhome}/bin/AdGuardHome --check-config --config /var/lib/AdGuardHome/AdGuardHome. yaml --work-dir /var/lib/AdGuardHome"
-        "+${pkgs.writeShellScript "inject-adguard-password" ''
-            set -euo pipefail
-            PASSWORD=$(cat ${config.sops. secrets.adguardhome-password.path})
-            ${pkgs.yq-go}/bin/yq eval '. users = [{"name": "${username}", "password": env(PASSWORD)}]' -i /var/lib/AdGuardHome/AdGuardHome.yaml
-        ''}"
-    ];
 
 }
