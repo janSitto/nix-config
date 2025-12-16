@@ -55,6 +55,7 @@
       steam = import ./modules/programs/steam.nix;
       virtualisation = import ./modules/virtualisation.nix;
       # Server Stuff
+      adguardhome = import ./modules/server/adguardhome.nix;
       duckdns = import ./modules/server/duckdns.nix;
       nginx = import ./modules/server/nginx.nix;
       openssh = import ./modules/server/openssh.nix;
@@ -135,6 +136,7 @@
         modules = with self.nixosModules; [
           ./hosts/server/configuration.nix 
           sops-nix.nixosModules.sops
+          adguardhome
           grub
           duckdns
           nginx
