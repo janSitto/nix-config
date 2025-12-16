@@ -40,8 +40,15 @@
             ];
         };
     }; 
-    systemd.services.adguardhome.preStart = lib.mkAfter ''
-        PASSWORD=$(cat ${config.sops.secrets.user-password.path})
-        ${pkgs.yq-go}/bin/yq eval '. users = [{"name": "${username}", "password": "'$PASSWORD'"}]' -i AdGuardHome.yaml
-    '';
+    systemd.services.adguardhome = {
+        serviceConfig. LoadCredential = [
+            "password: ${config.sops.secrets.user-password. path}"
+        ];
+        preStart = lib.mkAfter ''
+            PASSWORD=$(cat $CREDENTIALS_DIRECTORY/password)
+            if [ -f AdGuardHome. yaml ]; then
+                ${pkgs.yq-go}/bin/yq eval '.users = [{"name": "${username}", "password": "'$PASSWORD'"}]' -i AdGuardHome.yaml
+            fi
+        '';
+    };
 }
