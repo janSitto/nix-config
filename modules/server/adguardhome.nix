@@ -12,12 +12,6 @@
         host = "0.0.0.0";
         port = 3003;
         settings = {
-            users = [
-                {
-                    name = "${username}";
-                    password = config.sops.placeholder.user-password;
-                }
-            ];
             dns = {
                 upstream_dns = [
                 # Example config with quad9
@@ -46,4 +40,8 @@
             ];
         };
     }; 
+    systemd.services.adguardhome.preStart = lib.mkAfter ''
+        PASSWORD=$(cat ${config.sops.secrets.user-password.path})
+        ${pkgs.yq-go}/bin/yq eval ". users = [{\"name\": \"${username}\", \"password\": \"$PASSWORD\"}]" -i "$CONFIG"
+    '';
 }
