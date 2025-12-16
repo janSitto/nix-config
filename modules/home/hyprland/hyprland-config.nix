@@ -14,8 +14,9 @@
       };
 
       input = {
-        kb_layout = "br";
+        kb_layout = "br,us";
         kb_variant = "abnt2";
+        kb_options = "rctrl:nocaps,grp:ctrl_space_toggle";
       };
 
       "$mod" = "SUPER";
