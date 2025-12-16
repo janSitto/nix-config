@@ -34,12 +34,12 @@
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
             ];
-            users = [];
-            http = {
-                pprof = {
-                    enabled = false;
-                };
-            };
+            users = [
+                { 
+                    name = "admin";
+                    password = "";
+                }
+            ];
         };
     };
     systemd.services.adguardhome.serviceConfig = {
