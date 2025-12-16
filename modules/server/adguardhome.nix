@@ -40,7 +40,8 @@
             ];
         };
     }; 
-    systemd.services. adguardhome. serviceConfig.ExecStartPre = lib.mkBefore [
-        "+${pkgs.bash}/bin/bash -c 'PASSWORD=$(cat ${config.sops.secrets.adguardhome-password.path}) && ${pkgs.yq-go}/bin/yq eval \". users = [{\\\"name\\\": \\\"${username}\\\", \\\"password\\\": \\\"$PASSWORD\\\"}]\" -i /var/lib/AdGuardHome/AdGuardHome.yaml || true'"
-    ];
+     systemd.services.adguardhome.preStart = lib.mkAfter ''
+        PASSWORD=$(cat ${config.sops.secrets.adguardhome-password.path})
+        ${pkgs.yq-go}/bin/yq eval ". users = [{\"name\": \"${username}\", \"password\": \"$PASSWORD\"}]" -i /var/lib/AdGuardHome/AdGuardHome.yaml
+    '';
 }
