@@ -1,11 +1,8 @@
 {config, lib, pkgs, username, ...}: 
 {
 
-    sops.secrets = {
-        adguardhome-password = { 
-            key = "adguardhome/password"; 
-            owner = "adguardhome";
-        };
+    sops.secrets.adguardhome-password = { 
+        key = "adguardhome/password"; 
     };
 
     networking.firewall.allowedTCPPorts = [ 3003 ];
@@ -43,10 +40,7 @@
             ];
         };
     }; 
-    systemd.services.adguardhome. preStart = lib.mkAfter ''
-        PASSWORD=$(cat ${config.sops.secrets.adguardhome-password.path})
-        if [ -f AdGuardHome.yaml ]; then
-            ${pkgs.yq-go}/bin/yq eval '.users = [{"name": "${username}", "password": "'$PASSWORD'"}]' -i AdGuardHome.yaml
-        fi
-    '';
+    systemd.services. adguardhome. serviceConfig.ExecStartPre = lib.mkBefore [
+        "+${pkgs.bash}/bin/bash -c 'PASSWORD=$(cat ${config.sops. secrets.adguard-password. path}) && ${pkgs.yq-go}/bin/yq eval \". users = [{\\\"name\\\": \\\"${username}\\\", \\\"password\\\": \\\"$PASSWORD\\\"}]\" -i /var/lib/AdGuardHome/AdGuardHome.yaml || true'"
+    ];
 }
