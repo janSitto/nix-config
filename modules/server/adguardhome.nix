@@ -41,8 +41,8 @@
         };
     }; 
     systemd.services.adguardhome = {
-        serviceConfig. LoadCredential = [
-            "password: ${config.sops.secrets.user-password. path}"
+        serviceConfig.LoadCredential = [
+            "password: ${config.sops.secrets.user-password.path}"
         ];
         preStart = lib.mkAfter ''
             PASSWORD=$(cat $CREDENTIALS_DIRECTORY/password)
