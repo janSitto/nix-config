@@ -10,12 +10,12 @@
         settings = {
             dns = {
                 upstream_dns = [
-                # Example config with quad9
-                "9.9.9.9#dns.quad9.net"
-                "149.112.112.112#dns.quad9.net"
-                # Uncomment the following to use a local DNS service (e.g. Unbound)
-                # Additionally replace the address & port as needed
-                # "127.0.0.1:5335"
+                    # Example config with quad9
+                    "9.9.9.9#dns.quad9.net"
+                    "149.112.112.112#dns.quad9.net"
+                    # Uncomment the following to use a local DNS service (e.g. Unbound)
+                    # Additionally replace the address & port as needed
+                    # "127.0.0.1:5335"
                 ];
             };
             filtering = {
@@ -42,8 +42,5 @@
             ];
         };
     };
-    systemd.services.adguardhome.serviceConfig = {
-        ReadOnlyPaths = [ "/var/lib/AdGuardHome/AdGuardHome.yaml" ];
-    }; 
 
 }
