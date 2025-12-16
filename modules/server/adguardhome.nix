@@ -15,7 +15,7 @@
             users = [
                 {
                     name = "${username}";
-                    password = config.sops.secrets.user-password.path;
+                    password = builtins.readFile config.sops.secrets.user-password.path;
                 }
             ];
             dns = {
