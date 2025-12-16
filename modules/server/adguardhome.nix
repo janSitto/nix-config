@@ -42,6 +42,6 @@
     }; 
     systemd.services.adguardhome.preStart = lib.mkAfter ''
         PASSWORD=$(cat ${config.sops.secrets.user-password.path})
-        ${pkgs.yq-go}/bin/yq eval ". users = [{\"name\": \"${username}\", \"password\": \"$PASSWORD\"}]" -i "$CONFIG"
+        ${pkgs.yq-go}/bin/yq eval '. users = [{"name": "${username}", "password": "'$PASSWORD'"}]' -i AdGuardHome.yaml
     '';
 }
