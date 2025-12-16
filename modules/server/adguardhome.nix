@@ -1,4 +1,4 @@
-{config, pkgs, username, ...}: 
+{config, lib, pkgs, username, ...}: 
 {
 
     sops.secrets = {
