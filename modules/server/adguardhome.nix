@@ -1,7 +1,10 @@
 {config, lib, pkgs, username, ...}: 
 {
 
-    networking.firewall.allowedTCPPorts = [ 3003 ];
+    networking.firewall = {
+        allowedTCPPorts = [ 53 3003 ];
+        allowedUDPPorts = [ 53 ];
+    };
     services.adguardhome = {
         enable = true;
         # You can select any ip and port, just make sure to open firewalls where needed
