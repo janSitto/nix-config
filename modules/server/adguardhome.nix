@@ -43,6 +43,9 @@
     systemd.services.adguardhome.serviceConfig.ExecStartPre = lib.mkForce [
         "${config.systemd.package}/bin/systemd-tmpfiles --create --remove --boot --prefix /run/AdGuardHome"
         "${pkgs.adguardhome}/bin/AdGuardHome --check-config --config /var/lib/AdGuardHome/AdGuardHome.yaml --work-dir /var/lib/AdGuardHome"
-        "+${pkgs.bash}/bin/bash -c 'PASSWORD=$(cat ${config.sops.secrets.adguardhome-password.path}) && ${pkgs.yq-go}/bin/yq eval \". users = [{\\\"name\\\": \\\"${username}\\\", \\\"password\\\": \\\"\\$PASSWORD\\\"}]\" -i /var/lib/AdGuardHome/AdGuardHome.yaml'"
+        "+${pkgs.writeShellScript "inject-adguard-password" ''
+          PASSWORD=$(cat ${config.sops.secrets.adguardhome-password.path})
+          ${pkgs.yq-go}/bin/yq eval '. users = [{"name": "${username}", "password": "'"$PASSWORD"'"}]' -i /var/lib/AdGuardHome/AdGuardHome. yaml
+        ''}"
     ];
 }
