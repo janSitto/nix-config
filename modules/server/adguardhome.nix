@@ -2,8 +2,10 @@
 {
 
     sops.secrets = {
-        adguardhome-password = { key = "adguardhome/password"; };
-        owner = "adguardhome";
+        adguardhome-password = { 
+            key = "adguardhome/password"; 
+            owner = "adguardhome";
+        };
     };
 
     networking.firewall.allowedTCPPorts = [ 3003 ];
