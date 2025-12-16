@@ -1,5 +1,10 @@
-{pkgs, ...}: 
+{pkgs, username, ...}: 
 {
+
+    sops.secrets = {
+        user-password = { key = "user/password"; };
+    };
+
     networking.firewall.allowedTCPPorts = [ 3003 ];
     services.adguardhome = {
         enable = true;
@@ -7,6 +12,12 @@
         host = "0.0.0.0";
         port = 3003;
         settings = {
+            users = [
+                {
+                    name = "${username}";
+                    password = config.sops.secrets.user-password.path;
+                }
+            ];
             dns = {
                 upstream_dns = [
                 # Example config with quad9
@@ -23,7 +34,7 @@
 
                 parental_enabled = false;  # Parental control-based DNS requests filtering.
                 safe_search = {
-                enabled = false;  # Enforcing "Safe search" option for search engines, when possible.
+                    enabled = false;  # Enforcing "Safe search" option for search engines, when possible.
                 };
             };
             # The following notation uses map
