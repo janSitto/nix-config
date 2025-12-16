@@ -31,8 +31,21 @@
             # to not have to manually create {enabled = true; url = "";} for every filter
             # This is, however, fully optional
             filters = map(url: { enabled = true; url = url; }) [
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt"
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt"
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt"
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt"
+                "https://adguardteam.github. io/HostlistsRegistry/assets/filter_6.txt"
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"  # The Big List of Hacked Malware Web Sites
-                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"  # malicious url blocklist
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt" # malicious url blocklist
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt"
+                "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt"
+                "https://easylist.to/easylist/easylist. txt"
+                "https://easylist.to/easylist/easyprivacy.txt"
+                "https://easylist.to/easylist/fanboy-annoyance.txt"
+                "https://easylist.to/easylist/fanboy-social.txt"
+                "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"
             ];
             users = [
                 { 
