@@ -56,8 +56,8 @@
     lutris
     prismlauncher
     r2modman
-    #lumafly
-    #ckan
+    lumafly
+    ckan
 
     # Produtividade
     obsidian

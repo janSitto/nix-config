@@ -44,7 +44,7 @@
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt" # malicious url blocklist
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt"
                 "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt"
-                "https://easylist.to/easylist/easylist. txt"
+                "https://easylist.to/easylist/easylist.txt"
                 "https://easylist.to/easylist/easyprivacy.txt"
                 "https://easylist.to/easylist/fanboy-annoyance.txt"
                 "https://easylist.to/easylist/fanboy-social.txt"
