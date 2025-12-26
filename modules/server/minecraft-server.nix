@@ -20,7 +20,7 @@
             enforce-secure-profile = false;
             force-gamemode = true;
             level-name = "Comuna dos Manos";
-            level-seed = "Comuna dos Manos";
+            level-seed = "";
         };
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
