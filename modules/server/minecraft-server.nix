@@ -12,9 +12,9 @@
             installPhase = ''
                 mkdir -p $out/bin $out/lib/minecraft
                 cp $src $out/lib/minecraft/server.jar
-                # Note: We do NOT add -Xmx here. We do it in jvmOpts below.
+                
                 makeWrapper ${pkgs.openjdk21}/bin/java $out/bin/minecraft-server \
-                  --add-flags "-jar $out/lib/minecraft/server.jar nogui"
+                --add-flags "-jar $out/lib/minecraft/server.jar nogui"
             '';
         });
         openFirewall = true; 
