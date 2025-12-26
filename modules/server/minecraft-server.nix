@@ -25,8 +25,8 @@
         };
         serverProperties = {
             server-port = 25565;
-            difficulty = "hard";
-            gamemode = "survival";
+            difficulty = 3;
+            gamemode = 0;
             max-players = 10;
             motd = "Comuna dos Manos";
             white-list = false;
