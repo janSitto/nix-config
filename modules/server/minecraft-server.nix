@@ -21,6 +21,9 @@
             force-gamemode = true;
             level-name = "Comuna dos Manos";
             level-seed = "";
+            enable-rcon = true;
+            "rcon.port" = 25575;
+            "rcon.password" = "$2a$12$YJ0BanFAoriEvCsjneCkEO69IpBlZAEUhAhMXjtdBCYNyKGUr3/TC";
         };
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
