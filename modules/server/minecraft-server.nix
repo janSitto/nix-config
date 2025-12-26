@@ -24,4 +24,8 @@
         };
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
+    networking = { 
+        firewall.allowedTCPPorts = [ 25565 ];
+        firewall.allowedUDPPorts = [ 25565 ];
+    };
 }
