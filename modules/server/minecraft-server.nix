@@ -2,22 +2,6 @@
     services.minecraft-server = {
         enable = true;
         eula = true;
-        package = pkgs.minecraft-server.overrideAttrs (old: rec {
-            version = "1.21.11"; 
-            nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
-            src = pkgs.fetchurl {
-                url = "https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar"; 
-                sha256 = "sha256-+DuOCThlgG+THH40quQbF31MB2M1Jj3RJMddbWXdFyY="; 
-            };
-            installPhase = ''
-                mkdir -p $out/bin $out/lib/minecraft
-                cp $src $out/lib/minecraft/server.jar
-                makeWrapper ${pkgs.openjdk21}/bin/java $out/bin/minecraft-server \
-                    --add-flags "-jar $out/lib/minecraft/server.jar"
-            '';
-
-        });
-        jvmOpts = "-Xms2048M -Xmx4096M";
         openFirewall = true; 
         declarative = true;
         whitelist = {
@@ -38,9 +22,6 @@
             level-name = "Comuna dos Manos";
             level-seed = "Comuna dos Manos";
         };
-    };
-    networking = { 
-        firewall.allowedTCPPorts = [ 25565 ];
-        firewall.allowedUDPPorts = [ 25565 ];
+        jvmOpts = "-Xms2048M -Xmx4096M";
     };
 }
