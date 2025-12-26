@@ -38,6 +38,7 @@ in
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
     systemd.tmpfiles.rules = [
+        "d /var/lib/minecraft 0755 minecraft minecraft - -"
         "L+ /var/lib/minecraft/server-icon.png - - - - ${serverIcon}"
     ];
 }
