@@ -2,6 +2,13 @@
     services.minecraft-server = {
         enable = true;
         eula = true;
+        package = pkgs.minecraft-server.overrideAttrs (old: rec {
+            version = "1.21.11"; 
+            src = pkgs.fetchurl {
+                url = "https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar"; 
+                sha256 = "0mzjjgf2b2k4iam885jqicam540v646dwvy06d0dxyqay3586kni"; 
+            };
+        });
         openFirewall = true; 
         declarative = true;
         whitelist = {
@@ -11,8 +18,8 @@
         };
         serverProperties = {
             server-port = 25565;
-            difficulty = 3;
-            gamemode = 1;
+            difficulty = "hard";
+            gamemode = "survival";
             max-players = 10;
             motd = "Comuna dos Manos";
             white-list = false;
