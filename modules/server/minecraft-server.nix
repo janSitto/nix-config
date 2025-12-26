@@ -3,19 +3,18 @@
         enable = true;
         eula = true;
         package = pkgs.minecraft-server.overrideAttrs (old: rec {
-        version = "1.21.11";
-        src = pkgs.fetchurl {
-                url = "https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar";
-                sha256 = "sha256-+DuOCThlgG+THH40quQbF31MB2M1Jj3RJMddbWXdFyY=";
+            version = "1.21.11"; 
+            nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
+            src = pkgs.fetchurl {
+                url = "https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar"; 
+                sha256 = "sha256-+DuOCThlgG+THH40quQbF31MB2M1Jj3RJMddbWXdFyY="; 
             };
-            # Manually forcing the runtime to use Java 21
-            installPhase = let
-                jre = pkgs.openjdk21;
-            in ''
+            installPhase = ''
                 mkdir -p $out/bin $out/lib/minecraft
                 cp $src $out/lib/minecraft/server.jar
-                makeWrapper ${jre}/bin/java $out/bin/minecraft-server \
-                --add-flags "-jar $out/lib/minecraft/server.jar nogui"
+                # Note: We do NOT add -Xmx here. We do it in jvmOpts below.
+                makeWrapper ${pkgs.openjdk21}/bin/java $out/bin/minecraft-server \
+                  --add-flags "-jar $out/lib/minecraft/server.jar nogui"
             '';
         });
         openFirewall = true; 
