@@ -6,7 +6,7 @@
         version = "1.21.11";
         src = pkgs.fetchurl {
                 url = "https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar";
-                sha256 = "sha256-+DuOCThlgG+THH40quQbF31MB2M1Jj3RJMddbWXdFyY=";
+                sha256 = "sha256-0U6DyvAK+95AM8Bv3gwxG5BSFYtYFoSqimSKJdyT8lc=";
             };
             # Manually forcing the runtime to use Java 21
             installPhase = let
