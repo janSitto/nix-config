@@ -12,9 +12,8 @@
             installPhase = ''
                 mkdir -p $out/bin $out/lib/minecraft
                 cp $src $out/lib/minecraft/server.jar
-                
                 makeWrapper ${pkgs.openjdk21}/bin/java $out/bin/minecraft-server \
-                --add-flags "-jar $out/lib/minecraft/server.jar nogui"
+                --add-flags "-Xms2048M -Xmx4096M -jar $out/lib/minecraft/server.jar nogui"
             '';
         });
         openFirewall = true; 
@@ -37,7 +36,6 @@
             level-name = "Comuna dos Manos";
             level-seed = "Comuna dos Manos";
         };
-        jvmOpts = "-Xms2048M -Xmx4096M";
     };
     networking = { 
         firewall.allowedTCPPorts = [ 25565 ];
