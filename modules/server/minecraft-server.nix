@@ -25,12 +25,12 @@
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
-    systemd.tmpfiles.rules = [
-        "C+ /var/lib/minecraft/server-icon.png 0644 minecraft minecraft - ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
-        convert ${pkgs.fetchurl {
+    systemd.services.minecraft-server. preStart = ''
+        cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
+            convert ${pkgs. fetchurl {
             url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
             sha256 = "0a3yb9wkqhmanm4zwz2bpgdl2aa8x7gd44wajl3ijrk97d0h8n92";
-        }} -resize 64x64! $out
-        ''}"
-    ];
+            }} -resize 64x64! $out
+        ''} /var/lib/minecraft/server-icon.png
+    '';
 }
