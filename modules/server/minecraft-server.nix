@@ -1,16 +1,4 @@
-{config, pkgs, ...}: 
-let
-  serverIcon = pkgs.runCommand "server-icon.png" {
-    nativeBuildInputs = [ pkgs.imagemagick ];
-    src = pkgs.fetchurl {
-      url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
-      sha256 = "0a3yb9wkqhmanm4zwz2bpgdl2aa8x7gd44wajl3ijrk97d0h8n92";
-    };
-  } ''
-    convert $src -resize 64x64! $out
-  '';
-in
-{
+{config, pkgs, ...}: {
     services.minecraft-server = {
         enable = true;
         eula = true;
@@ -38,7 +26,11 @@ in
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
     systemd.tmpfiles.rules = [
-        "d /var/lib/minecraft 0755 minecraft minecraft - -"
-        "L+ /var/lib/minecraft/server-icon.png - - - - ${serverIcon}"
+        "C+ /var/lib/minecraft/server-icon.png 0644 minecraft minecraft - ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
+        convert ${pkgs.fetchurl {
+            url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
+            sha256 = "0a3yb9wkqhmanm4zwz2bpgdl2aa8x7gd44wajl3ijrk97d0h8n92";
+        }} -resize 64x64! $out
+        ''}"
     ];
 }
