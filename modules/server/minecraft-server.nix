@@ -13,9 +13,11 @@
                 mkdir -p $out/bin $out/lib/minecraft
                 cp $src $out/lib/minecraft/server.jar
                 makeWrapper ${pkgs.openjdk21}/bin/java $out/bin/minecraft-server \
-                --add-flags "-Xms2048M -Xmx4096M -jar $out/lib/minecraft/server.jar nogui"
+                    --add-flags "-jar $out/lib/minecraft/server.jar"
             '';
+
         });
+        jvmOpts = "-Xms2048M -Xmx4096M";
         openFirewall = true; 
         declarative = true;
         whitelist = {
