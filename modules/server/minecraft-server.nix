@@ -30,13 +30,13 @@
     environment.systemPackages = with pkgs; [ screen ];
     systemd.sockets.minecraft-server = {
         enable = false;
-        antedBy = pkgs.lib.mkForce [];
+        wantedBy = pkgs.lib.mkForce [];
     };
     systemd.services.minecraft-server = {
         requires = pkgs.lib.mkForce [];
         after = pkgs.lib.mkForce [ "network.target" ];
         wantedBy = [ "multi-user.target" ]; 
-        
+
         serviceConfig = {
             Type = pkgs.lib.mkForce "forking";
             ExecStart = pkgs.lib. mkForce ''
