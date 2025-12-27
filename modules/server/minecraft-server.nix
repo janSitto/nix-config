@@ -19,14 +19,23 @@
             allow-cheats = false;
             enforce-secure-profile = false;
             force-gamemode = true;
+            view-distance = 12;
             level-name = "Comuna dos Manos";
             level-seed = "";
-            enable-rcon = true;
-            "rcon.port" = 25575;
-            "rcon.password" = "placeholder";
         };
+        package = pkgs.papermc;
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
+    };
+    environment.systemPackages = with pkgs; [ screen ];
+    systemd. services.minecraft-server.serviceConfig = {
+        Type = pkgs.lib.mkForce "forking";
+        ExecStart = pkgs.lib.mkForce ''
+            ${pkgs.screen}/bin/screen -DmS minecraft ${pkgs.bash}/bin/bash -c "cd /var/lib/minecraft && ${pkgs.jdk17}/bin/java ${config.services.minecraft-server.jvmOpts} -jar ${pkgs.papermc}/lib/papermc/papermc.jar nogui"
+        '';
+        ExecStop = pkgs.lib. mkForce ''
+            ${pkgs.screen}/bin/screen -S minecraft -X stuff 'stop^M'
+        '';
     };
     systemd.services.minecraft-server. preStart = ''
         cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
