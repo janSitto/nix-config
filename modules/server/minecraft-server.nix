@@ -17,7 +17,6 @@
             motd = "Servidor NixOS de JVS";
             white-list = false;
             allow-cheats = false;
-            online-mode = false;
             enforce-secure-profile = false;
             force-gamemode = true;
             view-distance = 12;
