@@ -29,7 +29,7 @@
     };
     networking.firewall.allowedTCPPorts = [ 8123 ];
     environment.systemPackages = with pkgs; [ wget ];
-    systemd.services.preStart = ''
+    systemd.services.minecraft-server.preStart = ''
         cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
             convert ${pkgs. fetchurl {
             url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
