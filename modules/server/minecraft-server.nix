@@ -17,6 +17,7 @@
             motd = "Servidor NixOS de JVS";
             white-list = false;
             allow-cheats = false;
+            online-mode = false;
             enforce-secure-profile = false;
             force-gamemode = true;
             view-distance = 12;
@@ -27,7 +28,6 @@
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
-    networking.firewall.allowedTCPPorts = [ 8123 ];
     environment.systemPackages = with pkgs; [ wget ];
     systemd.services.minecraft-server.preStart = ''
         cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
