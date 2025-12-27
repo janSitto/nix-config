@@ -38,13 +38,14 @@
         ''} /var/lib/minecraft/server-icon.png
 
         mkdir -p /var/lib/minecraft/plugins
-        if [ !  -f /var/lib/minecraft/plugins/dynmap.jar ]; then
-        ${pkgs.wget}/bin/wget -O /var/lib/minecraft/plugins/dynmap.jar \
-            https://dev.bukkit.org/projects/dynmap/files/latest
+        
+        if [ ! -f /var/lib/minecraft/plugins/Dynmap.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Dynmap.jar \
+            "https://hangarcdn.papermc.io/plugins/webbukkit/Dynmap/versions/3.7-beta-7/PAPER/Dynmap-3.7-beta-7-spigot.jar"
         fi
-
-        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator. jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator. jar \
+        
+        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator.jar \
             "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
         fi
     '';
