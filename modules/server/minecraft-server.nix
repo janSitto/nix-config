@@ -28,11 +28,15 @@
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
     environment.systemPackages = with pkgs; [ screen ];
-    systemd.sockets.minecraft-server.enable = false;
+    systemd.sockets.minecraft-server = {
+        enable = false;
+        antedBy = pkgs.lib.mkForce [];
+    };
     systemd.services.minecraft-server = {
         requires = pkgs.lib.mkForce [];
         after = pkgs.lib.mkForce [ "network.target" ];
-
+        wantedBy = [ "multi-user.target" ]; 
+        
         serviceConfig = {
             Type = pkgs.lib.mkForce "forking";
             ExecStart = pkgs.lib. mkForce ''
@@ -42,7 +46,7 @@
                 ${pkgs.screen}/bin/screen -S minecraft -X stuff 'stop^M'
             '';
         };
-        
+
         preStart = ''
             cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
                 convert ${pkgs. fetchurl {
