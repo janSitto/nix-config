@@ -27,33 +27,25 @@
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
-    environment.systemPackages = with pkgs; [ screen ];
-    systemd.sockets.minecraft-server = {
-        enable = false;
-        wantedBy = pkgs.lib.mkForce [];
-    };
-    systemd.services.minecraft-server = {
-        requires = pkgs.lib.mkForce [];
-        after = pkgs.lib.mkForce [ "network.target" ];
-        wantedBy = [ "multi-user.target" ]; 
+    networking.firewall.allowedTCPPorts = [ 8123 ];
+    environment.systemPackages = with pkgs; [ wget ];
+    systemd.services.preStart = ''
+        cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
+            convert ${pkgs. fetchurl {
+            url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
+            sha256 = "0a3yb9wkqhmanm4zwz2bpgdl2aa8x7gd44wajl3ijrk97d0h8n92";
+            }} -resize 64x64! $out
+        ''} /var/lib/minecraft/server-icon.png
 
-        serviceConfig = {
-            Type = pkgs.lib.mkForce "forking";
-            ExecStart = pkgs.lib. mkForce ''
-                ${pkgs.screen}/bin/screen -DmS minecraft ${pkgs. bash}/bin/bash -c "cd /var/lib/minecraft && ${pkgs.jdk17}/bin/java ${config.services. minecraft-server.jvmOpts} -jar ${pkgs. papermc}/lib/papermc/papermc.jar nogui"
-            '';
-            ExecStop = pkgs.lib. mkForce ''
-                ${pkgs.screen}/bin/screen -S minecraft -X stuff 'stop^M'
-            '';
-        };
+        mkdir -p /var/lib/minecraft/plugins
+        if [ !  -f /var/lib/minecraft/plugins/dynmap.jar ]; then
+        ${pkgs.wget}/bin/wget -O /var/lib/minecraft/plugins/dynmap.jar \
+            https://dev.bukkit.org/projects/dynmap/files/latest
+        fi
 
-        preStart = ''
-            cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
-                convert ${pkgs. fetchurl {
-                url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
-                sha256 = "0a3yb9wkqhmanm4zwz2bpgdl2aa8x7gd44wajl3ijrk97d0h8n92";
-                }} -resize 64x64! $out
-            ''} /var/lib/minecraft/server-icon.png
-        '';
-    };
+        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator. jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator. jar \
+            "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
+        fi
+    '';
 }
