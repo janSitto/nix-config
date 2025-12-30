@@ -27,8 +27,8 @@
         # Abrir aplicativos
         "$mod, SPACE, exec, wofi"
         "$mod, A, exec, kitty yazi"
-        "$mod, V, exec, kitty nvim"
-        #"$mod, F, exec, firefox"
+        "$mod, E, exec, kitty nvim"
+        "$mod, F, exec, firefox"
         "$mod, Z, exec, zen-twilight"
         "$mod, T, exec, kitty"
         "$mod, O, exec, obsidian"

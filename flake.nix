@@ -26,7 +26,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
   
@@ -43,6 +46,7 @@
       hyprland = import ./modules/home/hyprland/hyprland.nix;
       fonts = import ./modules/fonts.nix;
       programs = import ./modules/programs/programs.nix;
+      vscodium = import ./modules/programs/vscodium.nix;
       qt = import ./modules/programs/qt.nix;
       firefox = import ./modules/programs/firefox.nix;
       steam = import ./modules/programs/steam.nix;
