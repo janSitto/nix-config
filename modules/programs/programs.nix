@@ -29,11 +29,11 @@
     btop
     powertop
     lm_sensors
-    cowsay
-    fortune
-    cbonsai
-    cmatrix
-    asciiquarium
+    #cowsay
+    #fortune
+    #cbonsai
+    #cmatrix
+    #asciiquarium
     wget
 
     # Arquivos
@@ -56,8 +56,8 @@
     lutris
     prismlauncher
     r2modman
-    lumafly
-    ckan
+    #lumafly
+    #ckan
 
     # Produtividade
     obsidian
@@ -85,11 +85,11 @@
     cargo
     gcc
     scrcpy
-    android-tools
+    #android-tools
     #android-studio
-    jetbrains.idea-community-bin
-    jetbrains.clion
-    jetbrains.pycharm-community-bin
+    #jetbrains.idea-community-bin
+    #jetbrains.clion
+    #jetbrains.pycharm-community-bin
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = (
@@ -122,11 +122,11 @@
 
     # 3D & 2D
     freecad-wayland
-    librecad
-    cura-appimage
+    #librecad
+    #cura-appimage
     orca-slicer
-    inkscape
-    blender
+    #inkscape
+    #blender
     kicad
 
   ];

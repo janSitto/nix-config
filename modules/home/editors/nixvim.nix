@@ -1,4 +1,20 @@
-{lib, pkgs, inputs, ...}: {
+{inputs, lib, pkgs,...}: {
+
+    # NOTE TO SELF
+    /*
+
+    To go back to using this add this flake input:
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    and add "nixvim" to the outputs
+
+    ...then add "../modules/home/editors/nixvim.nix" to home-config.nix imports
+
+    */
     imports = [ inputs.nixvim.homeModules.nixvim ];
     programs.nixvim = {
 

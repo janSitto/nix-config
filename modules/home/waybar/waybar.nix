@@ -73,7 +73,7 @@
           ];
         };
         clock = {
-          format = "{:%H:%M}";
+          format = "{:%H:%M | :%d %B %Y}";
         };
         cpu = {
           format = " ";

@@ -21,8 +21,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    nvf = {
+      url = github:notashelf/nvf;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -30,30 +30,24 @@
 
   };
   
-  outputs = { self, nixpkgs, home-manager, sops-nix, silentSDDM, nixvim, zen-browser, ...}@inputs: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, silentSDDM, nvf, zen-browser, ...}@inputs: {
     nixosModules = {
 
       # Home-manager & Home config
       home = import ./home/home-manager.nix;
       home-config = import ./home/home-config.nix;
+
       # Modules
-      waybar = import ./modules/home/waybar/waybar.nix;
-      wofi = import ./modules/home/wofi/wofi.nix;
-      gtk = import ./modules/home/gtk.nix;
       gnome = import ./modules/home/gnome/gnome.nix;
       plasma = import ./modules/home/plasma/plasma.nix;
       hyprland = import ./modules/home/hyprland/hyprland.nix;
-      hyprland-config = import ./modules/home/hyprland/hyprland-config.nix;
-      hyprpaper = import ./modules/home/hyprland/hyprpaper.nix;
-      helix = import ./modules/programs/helix.nix;
-      kitty = import ./modules/programs/kitty.nix;
-      nixvim = import ./modules/home/nixvim.nix;
       fonts = import ./modules/fonts.nix;
       programs = import ./modules/programs/programs.nix;
       qt = import ./modules/programs/qt.nix;
       firefox = import ./modules/programs/firefox.nix;
       steam = import ./modules/programs/steam.nix;
       virtualisation = import ./modules/virtualisation.nix;
+
       # Server Stuff
       adguardhome = import ./modules/server/adguardhome.nix;
       duckdns = import ./modules/server/duckdns.nix;
@@ -65,7 +59,7 @@
       tailscale-server = import ./modules/server/tailscale-server.nix;
       syncthing = import ./modules/server/syncthing.nix;
 
-      # Secrets/Secret Keeping/Cryptography
+      # Secrets/Cryptography
       sops = import ./modules/system/sops.nix;
 
       # System
@@ -149,28 +143,6 @@
           zerotier
           screen-off
           syncthing
-          user-jvs
-          sops
-        ];
-        specialArgs = {
-          system = "x86_64-linux";
-          username = "jvs";
-          inherit inputs;
-        };
-      };
-      stick = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = with self.nixosModules; [
-          ./hosts/stick/configuration.nix
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-          home
-          gnome
-          sddm
-          netwrok
-          grub
-          tailscale
-          io-utils
           user-jvs
           sops
         ];

@@ -16,8 +16,8 @@
     ../modules/home/wofi/wofi.nix
     ../modules/home/gtk.nix
     ../modules/home/kitty.nix
-    ../modules/home/helix.nix
-    ../modules/home/nixvim.nix
+    ../modules/home/editors/helix.nix
+    ../modules/home/editors/nvf.nix
   ];
 
   xdg.userDirs.enable = false;
