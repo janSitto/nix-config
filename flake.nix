@@ -137,6 +137,7 @@
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
           home
+          xdg
           adguardhome
           grub
           duckdns
