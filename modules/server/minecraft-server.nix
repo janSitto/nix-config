@@ -44,7 +44,7 @@
         fi
 
         if [ ! -f /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins//home/jvs/Downloads/voicechat-bukkit-2.6.7.jar \
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar \
             "https://hangarcdn.papermc.io/plugins/henkelmax/SimpleVoiceChat/versions/bukkit-2.6.7/PAPER/voicechat-bukkit-2.6.7.jar"
         fi
 
