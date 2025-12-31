@@ -49,4 +49,8 @@
         fi
 
     '';
+     networking.firewall = {
+        allowedTCPPorts = [];
+        allowedUDPPorts = [ 24454 ]; #24454: voicechat;
+    };
 }
