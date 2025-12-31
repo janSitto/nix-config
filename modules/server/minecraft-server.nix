@@ -48,6 +48,26 @@
             "https://hangarcdn.papermc.io/plugins/jmp/TabTPS/versions/1.3.30/PAPER/tabtps-paper-1.3.30.jar"
         fi
 
+        if [ ! -f /var/lib/minecraft/plugins/ImageFrame-1.9.0.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/ImageFrame-1.9.0.0.jar \
+            "https://hangarcdn.papermc.io/plugins/LOOHP/ImageFrame/versions/1.9.0/PAPER/ImageFrame-1.9.0.0.jar"
+        fi
+
+        if [ ! -f /var/lib/minecraft/plugins/GSit-3.1.1.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/GSit-3.1.1.jar \
+            "https://hangarcdn.papermc.io/plugins/Gecolay/GSit/versions/3.1.1/PAPER/GSit-3.1.1.jar"
+        fi
+
+        if [ ! -f /var/lib/minecraft/plugins/toolstats-1.9.11.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/toolstats-1.9.11.jar \
+            "https://hangarcdn.papermc.io/plugins/hyperdefined/ToolStats/versions/1.9.11/PAPER/toolstats-1.9.11.jar"
+        fi 
+
+        if [ ! -f /var/lib/minecraft/plugins/Backuper-4.0.2.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Backuper-4.0.2.jar \
+            "https://cdn.modrinth.com/data/7cMAqMND/versions/zmX79wvI/Backuper-4.0.2.jar"
+        fi
+
         if [ ! -f /var/lib/minecraft/plugins/Orebfuscator.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator.jar \
             "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
