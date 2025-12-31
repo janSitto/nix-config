@@ -32,13 +32,32 @@
                 style = "dark";
             };
 
-            statusline.lualine. enable = true;
-            telescope.enable = true;
-            autocomplete.nvim-cmp.enable = true;
-    
             languages = {
                 nix.enable = true;
                 rust.enable = true;
+            };
+
+            statusline.lualine. enable = true;
+            telescope.enable = true;
+            autocomplete.nvim-cmp.enable = true;
+
+            extraPlugins = {
+                /*
+                oil = {
+                   package = pkgs.vimPlugins.oil-nvim;
+                   setup = ''
+                        require("oil").setup({
+                           default_file_explorer = true, 
+                           columns = {
+                              "icon",
+                              "permissions",
+                              "size",
+                              "mtime",
+                           }
+                        });
+                   '';
+                };
+                */
             };
 
         };

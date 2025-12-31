@@ -42,5 +42,6 @@
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator.jar \
             "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
         fi
+
     '';
 }
