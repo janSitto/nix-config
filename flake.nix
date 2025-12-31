@@ -137,6 +137,7 @@
           sops-nix.nixosModules.sops
           adguardhome
           grub
+          nvf
           duckdns
           nginx
           openssh
