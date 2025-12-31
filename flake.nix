@@ -95,7 +95,6 @@
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
-          home
           gnome
           hyprland
           sddm
@@ -134,10 +133,7 @@
         system = "x86_64-linux";
         modules = with self.nixosModules; [
           ./hosts/server/configuration.nix 
-          home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
-          home
-          xdg
           adguardhome
           grub
           duckdns
