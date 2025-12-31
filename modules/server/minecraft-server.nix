@@ -39,7 +39,7 @@
         mkdir -p /var/lib/minecraft/plugins
        
         if [ ! -f /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar ]; then
-        ${pkgs.curl}/bincurl -L -o /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar \
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar \
             "https://hangarcdn.papermc.io/plugins/jmp/MiniMOTD/versions/2.2.2/PAPER/minimotd-paper-2.2.2.jar"
         fi
 
