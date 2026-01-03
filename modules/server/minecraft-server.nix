@@ -22,6 +22,7 @@
             view-distance = 12;
             level-name = "Comuna dos Manos";
             level-seed = "";
+            spawn-protection = 0;
         };
         package = pkgs.papermc;
         dataDir = "/var/lib/minecraft";
