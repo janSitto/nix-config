@@ -97,13 +97,17 @@
 
         # Economy plugins
 
-        if [ ! -f /var/lib/minecraft/plugins/JobListings-2.0.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/JobListings-2.0.jar \
-            "https://hangarcdn.papermc.io/plugins/refractored/joblistings/versions/2.0/PAPER/JobListings-2.0.jar"
+        if [ ! -f /var/lib/minecraft/plugins/EssentialsX-2.22.0-dev+49-000e6c5.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/EssentialsX-2.22.0-dev+49-000e6c5.jar \
+            "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsX-2.22.0-dev+49-000e6c5.jar"
         fi
 
-
         # Miscellaneous plugins
+        
+        if [ ! -f /var/lib/minecraft/plugins/SkinsRestorer.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/SkinsRestorer.jar \
+            "https://cdn.modrinth.com/data/TsLS8Py5/versions/oiCdtX5p/SkinsRestorer.jar"
+        fi
 
         if [ ! -f /var/lib/minecraft/plugins/GSit-3.1.1.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/GSit-3.1.1.jar \
@@ -118,6 +122,11 @@
         if [ ! -f /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar \
             "https://hangarcdn.papermc.io/plugins/henkelmax/SimpleVoiceChat/versions/bukkit-2.6.7/PAPER/voicechat-bukkit-2.6.7.jar"
+        fi
+
+        if [ ! -f /var/lib/minecraft/plugins/DistantHorizonsSupport-0.12.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/DistantHorizonsSupport-0.12.0.jar \
+            "https://cdn.modrinth.com/data/IjY7seTG/versions/FC75foTg/DistantHorizonsSupport-0.12.0.jar"
         fi
 
     '';
