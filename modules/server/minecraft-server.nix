@@ -52,6 +52,11 @@
 
         # Admin plugins
 
+        if [ ! -f /var/lib/minecraft/plugins/LuckPerms-Bukkit-5.5.17.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/LuckPerms-Bukkit-5.5.17.jar \
+            "https://cdn.modrinth.com/data/Vebnzrzj/versions/OrIs0S6b/LuckPerms-Bukkit-5.5.17.jar"
+        fi
+
         if [ ! -f /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar \
             "https://hangarcdn.papermc.io/plugins/jmp/MiniMOTD/versions/2.2.2/PAPER/minimotd-paper-2.2.2.jar"
@@ -60,6 +65,11 @@
         if [ ! -f /var/lib/minecraft/plugins/tabtps-paper-1.3.30.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/tabtps-paper-1.3.30.jar \
             "https://hangarcdn.papermc.io/plugins/jmp/TabTPS/versions/1.3.30/PAPER/tabtps-paper-1.3.30.jar"
+        fi
+        
+        if [ ! -f /var/lib/minecraft/plugins/worldedit-bukkit-7.3.18.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/worldedit-bukkit-7.3.18.jar \
+            "https://cdn.modrinth.com/data/1u6JkXh5/versions/XlUIRmF8/worldedit-bukkit-7.3.18.jar"
         fi
 
         if [ ! -f /var/lib/minecraft/plugins/worldguard-bukkit-7.0.15-beta-01.jar ]; then
