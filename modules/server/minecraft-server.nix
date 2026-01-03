@@ -86,11 +86,6 @@
 
         # Economy plugins
 
-        if [ ! -f /var/lib/minecraft/plugins/UltimateShop-4.1.5.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/UltimateShop-4.1.5.jar \
-            "https://hangarcdn.papermc.io/plugins/PQguanfang/UltimateShop/versions/4.1.5/PAPER/UltimateShop-4.1.5.jar"
-        fi
-
         if [ ! -f /var/lib/minecraft/plugins/JobListings-2.0.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/JobListings-2.0.jar \
             "https://hangarcdn.papermc.io/plugins/refractored/joblistings/versions/2.0/PAPER/JobListings-2.0.jar"
