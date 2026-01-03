@@ -26,7 +26,7 @@
         };
         package = pkgs.papermc;
         dataDir = "/var/lib/minecraft";
-        jvmOpts = "-Xms2048M -Xmx4096M";
+        jvmOpts = "-Xms2048M -Xmx6124M";
     };
 
     /*
