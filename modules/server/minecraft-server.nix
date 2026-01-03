@@ -27,6 +27,18 @@
         dataDir = "/var/lib/minecraft";
         jvmOpts = "-Xms2048M -Xmx4096M";
     };
+
+    /*
+        
+        Template de instalação de plugins
+
+        if [ ! -f /var/lib/minecraft/plugins/ ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/ \
+            ""
+        fi
+
+    */
+
     environment.systemPackages = with pkgs; [ wget ];
     systemd.services.minecraft-server.preStart = ''
         cp -f ${pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
@@ -37,7 +49,9 @@
         ''} /var/lib/minecraft/server-icon.png
 
         mkdir -p /var/lib/minecraft/plugins
-       
+
+        # Admin plugins
+
         if [ ! -f /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/minimotd-paper-2.2.2.jar \
             "https://hangarcdn.papermc.io/plugins/jmp/MiniMOTD/versions/2.2.2/PAPER/minimotd-paper-2.2.2.jar"
@@ -58,6 +72,33 @@
             "https://hangarcdn.papermc.io/plugins/LOOHP/ImageFrame/versions/1.9.0/PAPER/ImageFrame-1.9.0.0.jar"
         fi
 
+        if [ ! -f /var/lib/minecraft/plugins/Backuper-4.0.2.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Backuper-4.0.2.jar \
+            "https://cdn.modrinth.com/data/7cMAqMND/versions/zmX79wvI/Backuper-4.0.2.jar"
+        fi
+
+        # Anti-cheat plugins
+
+        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator.jar \
+            "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
+        fi
+
+        # Economy plugins
+
+        if [ ! -f /var/lib/minecraft/plugins/UltimateShop-4.1.5.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/UltimateShop-4.1.5.jar \
+            "https://hangarcdn.papermc.io/plugins/PQguanfang/UltimateShop/versions/4.1.5/PAPER/UltimateShop-4.1.5.jar"
+        fi
+
+        if [ ! -f /var/lib/minecraft/plugins/JobListings-2.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/JobListings-2.0.jar \
+            "https://hangarcdn.papermc.io/plugins/refractored/joblistings/versions/2.0/PAPER/JobListings-2.0.jar"
+        fi
+
+
+        # Miscellaneous plugins
+
         if [ ! -f /var/lib/minecraft/plugins/GSit-3.1.1.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/GSit-3.1.1.jar \
             "https://hangarcdn.papermc.io/plugins/Gecolay/GSit/versions/3.1.1/PAPER/GSit-3.1.1.jar"
@@ -67,16 +108,6 @@
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/toolstats-1.9.11.jar \
             "https://hangarcdn.papermc.io/plugins/hyperdefined/ToolStats/versions/1.9.11/PAPER/toolstats-1.9.11.jar"
         fi 
-
-        if [ ! -f /var/lib/minecraft/plugins/Backuper-4.0.2.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Backuper-4.0.2.jar \
-            "https://cdn.modrinth.com/data/7cMAqMND/versions/zmX79wvI/Backuper-4.0.2.jar"
-        fi
-
-        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator.jar \
-            "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
-        fi
 
         if [ ! -f /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar \
