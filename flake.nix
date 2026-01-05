@@ -95,7 +95,6 @@
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
-          gnome
           hyprland
           sddm
           network
@@ -121,7 +120,6 @@
           syncthing
           user-jvs
           sops
-          steam
         ];
         specialArgs = {
           system = "x86_64-linux";
