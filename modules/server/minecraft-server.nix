@@ -87,6 +87,11 @@
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Backuper-4.0.2.jar \
             "https://cdn.modrinth.com/data/7cMAqMND/versions/zmX79wvI/Backuper-4.0.2.jar"
         fi
+        
+        if [ ! -f /var/lib/minecraft/plugins/PlaceholderAPI-2.11.7.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/PlaceholderAPI-2.11.7.jar \
+            "https://cdn.modrinth.com/data/lKEzGugV/versions/sn9LYZkM/PlaceholderAPI-2.11.7.jar"
+        fi
 
         # Anti-cheat plugins
 
@@ -97,10 +102,26 @@
 
         # Economy plugins
 
-        if [ ! -f /var/lib/minecraft/plugins/P_economia.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/P_economia.jar \
-            "https://cdn.modrinth.com/data/YLO1VtDA/versions/Y96y1tpQ/P_economia.jar"
-        fi 
+        if [ ! -f /var/lib/minecraft/plugins/VaultUnlocked-2.17.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/VaultUnlocked-2.17.0.jar \
+            "https://cdn.modrinth.com/data/ayRaM8J7/versions/hWDrazHd/VaultUnlocked-2.17.0.jar"
+        fi
+
+        if [ ! -f /var/lib/minecraft/plugins/CoinsEngine-2.6.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/CoinsEngine-2.6.0.jar \
+            "https://cdn.modrinth.com/data/r0FB9U1e/versions/G0BJaAkm/CoinsEngine-2.6.0.jar"
+        fi
+        
+         if [ ! -f /var/lib/minecraft/plugins/Skript-2.13.2.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Skript-2.13.2.jar \
+            "https://cdn.modrinth.com/data/xFNYAvMk/versions/oLyH9Mpt/Skript-2.13.2.jar"
+        fi
+
+         if [ ! -f /var/lib/minecraft/plugins/ClickShop-1.0.2.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/ClickShop-1.0.2.jar \
+            "https://cdn.modrinth.com/data/41H6qVOW/versions/8ipgNiNu/ClickShop-1.0.2.jar"
+        fi
+
 
         # Miscellaneous plugins
         
