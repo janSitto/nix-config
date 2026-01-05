@@ -97,9 +97,9 @@
 
         # Economy plugins
 
-        if [ ! -f /var/lib/minecraft/plugins/EssentialsX-2.22.0-dev+49-000e6c5.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/EssentialsX-2.22.0-dev+49-000e6c5.jar \
-            "https://ci.ender.zone/job/EssentialsX/lastSuccessfulBuild/artifact/jars/EssentialsX-2.22.0-dev+49-000e6c5.jar"
+        if [ ! -f /var/lib/minecraft/plugins/P_economia.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/P_economia.jar \
+            "https://cdn.modrinth.com/data/YLO1VtDA/versions/Y96y1tpQ/P_economia.jar"
         fi 
 
         # Miscellaneous plugins

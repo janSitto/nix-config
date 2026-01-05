@@ -100,6 +100,7 @@
           network
           localhost
           grub
+          gnome
           timezone
           xdg
           qt
