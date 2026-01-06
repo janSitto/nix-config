@@ -107,26 +107,20 @@
             "https://cdn.modrinth.com/data/ayRaM8J7/versions/hWDrazHd/VaultUnlocked-2.17.0.jar"
         fi
         
-        if [ ! -f /var/lib/minecraft/plugins/nightcore-2.11.0.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/nightcore-2.11.0.jar \
-            "https://cdn.modrinth.com/data/Y4NRwMW5/versions/uHNRrjQ1/nightcore-2.11.0.jar"
+        if [ ! -f /var/lib/minecraft/plugins/BankAccounts-1.11.2.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/BankAccounts-1.11.2.jar \
+            "https://cdn.modrinth.com/data/Dc8RS2En/versions/ZLyRHjDA/BankAccounts-1.11.2.jar"
         fi
 
-        if [ ! -f /var/lib/minecraft/plugins/CoinsEngine-2.6.0.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/CoinsEngine-2.6.0.jar \
-            "https://cdn.modrinth.com/data/r0FB9U1e/versions/G0BJaAkm/CoinsEngine-2.6.0.jar"
+        if [ ! -f /var/lib/minecraft/plugins/Quests-3.16.1-430c34a.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Quests-3.16.1-430c34a.jar \
+            "https://github.com/LMBishop/Quests/releases/download/v3.16.1/Quests-3.16.1-430c34a.jar"
         fi
         
-         if [ ! -f /var/lib/minecraft/plugins/Skript-2.13.2.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Skript-2.13.2.jar \
-            "https://cdn.modrinth.com/data/xFNYAvMk/versions/oLyH9Mpt/Skript-2.13.2.jar"
+        if [ ! -f /var/lib/minecraft/plugins/Shopkeepers-2.25.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Shopkeepers-2.25.0.jar \
+            "https://dev.bukkit.org/projects/shopkeepers/files/7334401/download"
         fi
-
-         if [ ! -f /var/lib/minecraft/plugins/ClickShop-1.0.2.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/ClickShop-1.0.2.jar \
-            "https://cdn.modrinth.com/data/41H6qVOW/versions/8ipgNiNu/ClickShop-1.0.2.jar"
-        fi
-
 
         # Miscellaneous plugins
         
