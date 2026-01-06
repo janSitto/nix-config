@@ -106,6 +106,11 @@
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/VaultUnlocked-2.17.0.jar \
             "https://cdn.modrinth.com/data/ayRaM8J7/versions/hWDrazHd/VaultUnlocked-2.17.0.jar"
         fi
+        
+        if [ ! -f /var/lib/minecraft/plugins/nightcore-2.11.0.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/nightcore-2.11.0.jar \
+            "https://cdn.modrinth.com/data/Y4NRwMW5/versions/uHNRrjQ1/nightcore-2.11.0.jar"
+        fi
 
         if [ ! -f /var/lib/minecraft/plugins/CoinsEngine-2.6.0.jar ]; then
         ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/CoinsEngine-2.6.0.jar \
