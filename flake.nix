@@ -100,7 +100,6 @@
           network
           localhost
           grub
-          gnome
           timezone
           xdg
           qt
@@ -113,6 +112,8 @@
           pipewire
           power
           programs
+          steam
+          gnome
           firefox
           fonts
           virtualisation

@@ -95,8 +95,8 @@
 
         # Anti-cheat plugins
 
-        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator.jar \
+        if [ ! -f /var/lib/minecraft/plugins/Orebfuscator-5.4.1.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Orebfuscator-5.4.1.jar \
             "https://github.com/ImDaniX/Orebfuscator/releases/download/v5.4.1/Orebfuscator-5.4.1.jar"
         fi
 
@@ -117,9 +117,9 @@
             "https://github.com/LMBishop/Quests/releases/download/v3.16.1/Quests-3.16.1-430c34a.jar"
         fi
         
-        if [ ! -f /var/lib/minecraft/plugins/Shopkeepers-2.25.0.jar ]; then
-        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/Shopkeepers-2.25.0.jar \
-            "https://dev.bukkit.org/projects/shopkeepers/files/7334401/download"
+        if [ ! -f /var/lib/minecraft/plugins/ClickShop-1.0.2.jar ]; then
+        ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/ClickShop-1.0.2.jar \
+            "https://cdn.modrinth.com/data/41H6qVOW/versions/8ipgNiNu/ClickShop-1.0.2.jar"
         fi
 
         # Miscellaneous plugins
