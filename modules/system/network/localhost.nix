@@ -1,15 +1,18 @@
-{pkgs, ...}: 
+{ pkgs, ... }:
 let
-  php = pkgs.php82.withExtensions (_: with pkgs.php.extensions; [ 
-    curl
-    dom
-    mbstring
-    #json
-    pdo_mysql 
-    mbstring ]);
-in 
+  php = pkgs.php82.withExtensions (
+    _: with pkgs.php.extensions; [
+      curl
+      dom
+      mbstring
+      #json
+      pdo_mysql
+      mbstring
+    ]
+  );
+in
 {
-    
+
   environment.systemPackages = with pkgs; [
     php
     phpPackages.composer
@@ -23,7 +26,7 @@ in
   services.httpd = {
     enable = true;
     adminAddr = "webmaster@example.org";
-    enablePHP = true; 
+    enablePHP = true;
     extraModules = [ "php" ];
   };
   services.httpd = {
@@ -39,3 +42,4 @@ in
   };
 
 }
+

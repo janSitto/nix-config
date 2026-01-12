@@ -1,9 +1,9 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 let
 
-webIndex = "index.php"; 
+  webIndex = "index.php";
 
-in 
+in
 {
 
   services.nginx = {
@@ -33,3 +33,4 @@ in
   ];
 
 }
+

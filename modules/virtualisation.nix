@@ -1,7 +1,8 @@
-{pkgs, ...}:
- let
+{ pkgs, ... }:
+let
   virtualisation_username = "jvs";
- in {
+in
+{
 
   virtualisation.libvirtd.enable = true;
   environment.systemPackages = with pkgs; [
@@ -10,6 +11,7 @@
   ];
 
   users.extraGroups.libvirtd.members = [ "${virtualisation_username}" ];
-  users.extraGroups.kvm.members    = [ "${virtualisation_username}" ];
-  
+  users.extraGroups.kvm.members = [ "${virtualisation_username}" ];
+
 }
+

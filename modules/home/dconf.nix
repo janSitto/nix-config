@@ -1,14 +1,13 @@
-{pkgs, ...}:
-{ 
-
-   dconf = {
-      enable = true;
-      settings = {
-          "org/gnome/desktop/interface" = {
-            color-scheme = "prefer-dark";
-            gtk-theme = "Gruvbox-Dark";
-         };
+{ pkgs, ... }:
+{
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "Gruvbox-Dark";
       };
-   };
-  
+    };
+  };
+
 }

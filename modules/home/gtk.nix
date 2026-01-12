@@ -21,5 +21,5 @@
       package = pkgs.gruvbox-dark-icons-gtk;
     };
   };
-  
+
 }

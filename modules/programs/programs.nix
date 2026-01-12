@@ -77,7 +77,7 @@
     jdk21
     openjfx21
     #openjfx11
-    #openjfx8 
+    #openjfx8
     webkitgtk_6_0
     git
     rustup

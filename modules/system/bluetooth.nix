@@ -1,5 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   hardware.bluetooth = {
     enable = true;
   };
 }
+

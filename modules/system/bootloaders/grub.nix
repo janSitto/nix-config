@@ -1,4 +1,11 @@
-{inputs, config, pkgs, lib, ...}: {
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
 
   boot.loader = {
     grub = {
@@ -7,5 +14,6 @@
     };
     efi.canTouchEfiVariables = true;
   };
-  
+
 }
+

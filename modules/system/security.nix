@@ -1,11 +1,12 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
 
   security = {
     polkit.enable = true;
     rtkit.enable = true;
     pam = {
       services.swaylock = { };
-      services.hyprlock = {};
+      services.hyprlock = { };
       loginLimits = [
         {
           domain = "@users";
@@ -18,3 +19,4 @@
   };
 
 }
+

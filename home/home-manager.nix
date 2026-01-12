@@ -1,4 +1,9 @@
-{pkgs, inputs, username, ...}: 
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
 let
 
   userpfp = ./userpfp.jpg;
@@ -19,12 +24,15 @@ in
     };
   };
 
-  systemd.tmpfiles.rules = let
-    user = "${username}";
-    iconPath = userpfp;
-  in [
-    "f+ /var/lib/AccountsService/users/${user}  0600 root root -  [User]\\nIcon=/var/lib/AccountsService/icons/${user}\\n"
-    "L+ /var/lib/AccountsService/icons/${user}  -    -    -    -  ${iconPath}"
-  ];
+  systemd.tmpfiles.rules =
+    let
+      user = "${username}";
+      iconPath = userpfp;
+    in
+    [
+      "f+ /var/lib/AccountsService/users/${user}  0600 root root -  [User]\\nIcon=/var/lib/AccountsService/icons/${user}\\n"
+      "L+ /var/lib/AccountsService/icons/${user}  -    -    -    -  ${iconPath}"
+    ];
 
 }
+

@@ -1,14 +1,21 @@
-{config, pkgs, ...}: {
-    
+{ config, pkgs, ... }:
+{
+
   sops.secrets = {
-    user-password = { key = "user/password"; };
+    user-password = {
+      key = "user/password";
+    };
   };
 
   users.users.jvs = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "users" ];
+    extraGroups = [
+      "wheel"
+      "users"
+    ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
     shell = pkgs.bash;
   };
-  
+
 }
+

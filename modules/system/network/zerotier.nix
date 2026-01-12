@@ -1,7 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
   sops.secrets = {
-    zerotier-id = { key = "zerotier/id"; };
+    zerotier-id = {
+      key = "zerotier/id";
+    };
   };
 
   services.zerotierone.enable = true;
@@ -11,7 +14,7 @@
 
     after = [ "zerotierone.service" ];
     requires = [ "zerotierone.service" ];
-    
+
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
@@ -20,5 +23,6 @@
 
     wantedBy = [ "multi-user.target" ];
   };
-  
+
 }
+

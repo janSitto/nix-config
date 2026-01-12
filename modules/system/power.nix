@@ -1,5 +1,7 @@
-{pkgs, ...}: {
-    services.power-profiles-daemon = {
-        enable = true;
-    };
+{ pkgs, ... }:
+{
+  services.power-profiles-daemon = {
+    enable = true;
+  };
 }
+

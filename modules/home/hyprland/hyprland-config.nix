@@ -47,7 +47,7 @@
         ", F7, exec, brightnessctl set 10%+"
 
         ", F8, exec, hyprctl keyword monitor HDMI-A-1, 1920x1080@60, auto, 1, mirror, eDP-1"
-        
+
         ", PRINT, exec, hyprshot -m region --clipboard-only"
 
         "$act, SPACE, exec, pgrep waybar && pkill waybar || waybar &"
