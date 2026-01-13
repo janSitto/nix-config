@@ -120,12 +120,12 @@
         "https://github.com/LMBishop/Quests/releases/download/v3.16.1/Quests-3.16.1-430c34a.jar"
     fi
 
-    if [ ! -f /var/lib/minecraft/plugins/UltimateShop-4.2.1.jar ]; then
-    ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/UltimateShop-4.2.1.jar \
-        "https://cdn.modrinth.com/data/mIaP5HAP/versions/PobDuq0I/UltimateShop-4.2.1.jar"
-    fi
-
     # Miscellaneous plugins
+
+    if [ ! -f /var/lib/minecraft/plugins/bluemap-5.15-paper.jar ]; then
+      ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/bluemap-5.15-paper.jar \
+          "https://cdn.modrinth.com/data/swbUV1cr/versions/WyxMyd9G/bluemap-5.15-paper.jar"
+    fi
 
     if [ ! -f /var/lib/minecraft/plugins/SkinsRestorer.jar ]; then
     ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/SkinsRestorer.jar \
