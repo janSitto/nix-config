@@ -52,9 +52,10 @@
         home-config = import ./home/home-config.nix;
 
         # Modules
-        gnome = import ./modules/home/gnome/gnome.nix;
-        plasma = import ./modules/home/plasma/plasma.nix;
-        hyprland = import ./modules/home/hyprland/hyprland.nix;
+        gnome = import ./modules/home/genvs/gnome/gnome.nix;
+        plasma = import ./modules/home/genvs/plasma/plasma.nix;
+        hyprland = import ./modules/home/genvs/hyprland/hyprland.nix;
+        sway = import ./modules/home/genvs/sway/sway.nix;
         fonts = import ./modules/fonts.nix;
         programs = import ./modules/programs/programs.nix;
         vscodium = import ./modules/programs/vscodium.nix;
@@ -108,6 +109,7 @@
             sops-nix.nixosModules.sops
             home
             hyprland
+            sway
             sddm
             network
             localhost
