@@ -12,10 +12,10 @@
     extraGroups = [
       "wheel"
       "users"
+      "video"
     ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
     shell = pkgs.bash;
   };
 
 }
-

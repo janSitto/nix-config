@@ -13,9 +13,13 @@
     mako
   ];
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
+  programs = {
+    light.enable = true;
+    sway = {
+      enable = true;
+      extraOptions = [ "--unsupported-gpu" ];
+      wrapperFeatures.gtk = true;
+    };
   };
 
 }

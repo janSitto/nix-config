@@ -82,6 +82,7 @@
         grub = import ./modules/system/bootloaders/grub.nix;
         sddm = import ./modules/system/display-managers/sddm.nix;
         nvidia = import ./modules/system/graphics/nvidia.nix;
+        nvidia-nouveau = import ./modules/system/graphics/nvidia-nouveau.nix;
         bluetooth = import ./modules/system/bluetooth.nix;
         garbage-collector = import ./modules/system/garbage-collector.nix;
         io-utils = import ./modules/system/io-utils.nix;
@@ -108,9 +109,7 @@
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.sops
             home
-            hyprland
             sway
-            sddm
             network
             localhost
             grub
@@ -119,7 +118,7 @@
             qt
             xserver
             security
-            nvidia
+            nvidia-nouveau
             bluetooth
             garbage-collector
             io-utils

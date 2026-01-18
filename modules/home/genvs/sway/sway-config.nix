@@ -1,0 +1,97 @@
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      modifier = "Mod4";
+      terminal = "kitty";
+      startup = [
+        { command = "autotiling"; }
+        { command = "zen-twilight"; }
+      ];
+
+      bars = [ ];
+
+      input = {
+        "type:keyboard" = {
+          xkb_layout = "br,us";
+          xkb_variant = "abnt2";
+          xkb_options = "rctrl:nocaps,grp:ctrl_space_toggle";
+        };
+        "type:touchpad" = {
+          natural_scroll = "enabled";
+          tap = "enabled";
+          click_method = "button_areas";
+        };
+      };
+
+      keybindings =
+        let
+          mod = "Mod4";
+          act = "Alt";
+        in
+        {
+
+          "${mod}+Space" = "exec wofi";
+
+          "${mod}+a" = "exec kitty yazi";
+          "${mod}+e" = "exec kitty nvim";
+          "${mod}+f" = "exec firefox";
+          "${mod}+t" = "exec kitty";
+          "${mod}+o" = "exec obsidian";
+          "${mod}+z" = "exec zen-twilight";
+
+          "${act}+Space" = "exec pgrep waybar && pkill waybar || waybar &";
+
+          "${act}+x" = "kill";
+          "${act}+f" = "fullscreen";
+
+          "${act}+d" = "focus left";
+          "${act}+s" = "focus down";
+          "${act}+w" = "focus up";
+          "${act}+a" = "focus right";
+
+          "${act}+left" = "move left";
+          "${act}+down" = "move down";
+          "${act}+up" = "move up";
+          "${act}+right" = "move right";
+
+          "${act}+1" = "workspace number 1";
+          "${act}+2" = "workspace number 2";
+          "${act}+3" = "workspace number 3";
+          "${act}+4" = "workspace number 4";
+          "${act}+5" = "workspace number 5";
+          "${act}+6" = "workspace number 6";
+          "${act}+7" = "workspace number 7";
+          "${act}+8" = "workspace number 8";
+          "${act}+9" = "workspace number 9";
+          "${act}+0" = "workspace number 10";
+
+          "${act}+F1" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%";
+          "${act}+F2" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          "${act}+F3" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+
+          "${act}+F6" = "exec brightnessctl set -- -10%";
+          "${act}+F7" = "exec brightnessctl set -- +10%";
+
+        };
+
+      window = {
+        border = 0;
+        titlebar = false;
+      };
+
+    };
+  };
+
+  home.packages = with pkgs; [
+    autotiling
+  ];
+
+}

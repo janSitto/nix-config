@@ -10,8 +10,7 @@
 {
 
   imports = [
-    ../modules/home/hyprland/hyprland-config.nix
-    ../modules/home/hyprland/hyprpaper.nix
+    ../modules/home/genvs/sway/sway-config.nix
     ../modules/home/waybar/waybar.nix
     ../modules/home/wofi/wofi.nix
     ../modules/home/gtk.nix
