@@ -14,7 +14,7 @@
       modifier = "Mod4";
       terminal = "kitty";
       startup = [
-        { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.png"; }
+        { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.jpg"; }
         { command = "autotiling"; }
         { command = "zen-twilight"; }
       ];
