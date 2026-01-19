@@ -9,7 +9,7 @@
 
   wayland.windowManager.sway = {
     enable = true;
-    variables = [ "--all" ];
+    systemd.variables = [ "--all" ];
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
