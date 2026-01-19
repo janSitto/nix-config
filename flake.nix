@@ -81,6 +81,7 @@
         # System
         grub = import ./modules/system/bootloaders/grub.nix;
         sddm = import ./modules/system/display-managers/sddm.nix;
+        greetd = import ./modules/system/display-managers/greetd.nix;
         nvidia = import ./modules/system/graphics/nvidia.nix;
         nvidia-nouveau = import ./modules/system/graphics/nvidia-nouveau.nix;
         bluetooth = import ./modules/system/bluetooth.nix;
@@ -109,6 +110,7 @@
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.sops
             home
+            greetd
             sway
             network
             localhost

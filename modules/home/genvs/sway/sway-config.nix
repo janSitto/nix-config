@@ -2,16 +2,19 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }:
 {
 
   wayland.windowManager.sway = {
     enable = true;
+    variables = [ "--all" ];
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
       startup = [
+        { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.png"; }
         { command = "autotiling"; }
         { command = "zen-twilight"; }
       ];
@@ -52,10 +55,10 @@
           "${act}+x" = "kill";
           "${act}+f" = "fullscreen";
 
-          "${act}+d" = "focus left";
+          "${act}+a" = "focus left";
           "${act}+s" = "focus down";
           "${act}+w" = "focus up";
-          "${act}+a" = "focus right";
+          "${act}+d" = "focus right";
 
           "${act}+left" = "move left";
           "${act}+down" = "move down";
@@ -92,6 +95,7 @@
 
   home.packages = with pkgs; [
     autotiling
+    swaybg
   ];
 
 }

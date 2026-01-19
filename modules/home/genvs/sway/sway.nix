@@ -17,7 +17,6 @@
     light.enable = true;
     sway = {
       enable = true;
-      extraOptions = [ "--unsupported-gpu" ];
       wrapperFeatures.gtk = true;
     };
   };
