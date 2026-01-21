@@ -11,14 +11,14 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 21;
+        height = 14;
         output = [
           "eDP-1"
           "HDMI-A-1"
         ];
         modules-left = [
           "custom/appmenuicon"
-          "hyprland/workspaces"
+          "sway/workspaces"
         ];
         modules-center = [
           "clock"
@@ -30,9 +30,9 @@
           "battery"
           "custom/power"
         ];
-        spacing = 5;
+        spacing = 0;
 
-        "hyprland/workspaces" = {
+        "sway/workspaces" = {
           active-only = false;
           disable-scroll = true;
           on-click = "activate";
@@ -73,7 +73,9 @@
           ];
         };
         clock = {
-          format = "{:%H:%M | :%d %B %Y}";
+          tooltip-format = "{calendar}";
+          format-alt = "  {:%a, %d %b %Y}";
+          format = "  {:%I:%M %p}";
         };
         cpu = {
           format = " ";
@@ -96,24 +98,22 @@
         };
         pulseaudio = {
           # scroll-step = 1; # %, can be a float
-          format = "{icon} ";
-          format-alt = "{icon} {volume}% ";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
+          format = "{icon}";
+          format-alt = "{icon} {volume}%";
+          #format-bluetooth = "{volume}% {icon} {format_source}";
+          #format-bluetooth-muted = " {icon} {format_source}";
           format-muted = " {format_source}";
           format-source = "{volume}% ";
           format-source-muted = "";
           format-icons = {
-            headphone = " ";
-            hands-free = " ";
-            headset = " ";
+            headphone = "󰋋 ";
+            hands-free = "󰋋 ";
+            headset = "󰋋 ";
             phone = " ";
             portable = " ";
             car = " ";
             default = [
-              ""
-              ""
-              ""
+              "󱝉 "
             ];
           };
           on-click-right = "pavucontrol";
@@ -123,7 +123,7 @@
           format-wifi = " ";
           format-ethernet = " ";
           format-disconnected = "⚠ ";
-          tooltip-format = "  {ifname} via {gwaddri}";
+          tooltip-format = "   {ifname} via {gwaddri}";
           tooltip-format-wifi = ''
               {ifname} @ {essid}
             IP: {ipaddr}
@@ -147,8 +147,8 @@
           };
           format = "{icon}";
           format-alt = "{icon} {capacity}%";
-          #format-charging = " {capacity}%";
-          #format-charging-alt = "";
+          format-charging = " {capacity}%";
+          format-charging-alt = "";
           format-plugged = " ";
           format-plugged-alt = " {capacity}%";
           format-icons = [
@@ -160,9 +160,9 @@
           ];
         };
         "custom/power" = {
-          format = "3";
-          on-click = "${pkgs.systemd}/bin/systemctl poweroff -f";
-          on-click-right = "hyprlock";
+          format = "󰐥 ";
+          on-click = "${pkgs.systemd}/bin/systemctl poweroff";
+          on-click-right = "swaylock";
           tooltip-format = "Left: Power menu\nRight: Lock screen";
         };
       };

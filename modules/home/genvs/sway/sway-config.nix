@@ -15,7 +15,7 @@
       terminal = "kitty";
       startup = [
         { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.jpg"; }
-        { command = "autotiling"; }
+        { command = "autotiling-rs"; }
         { command = "zen-twilight"; }
       ];
 
@@ -94,7 +94,7 @@
   };
 
   home.packages = with pkgs; [
-    autotiling
+    autotiling-rs
     swaybg
   ];
 

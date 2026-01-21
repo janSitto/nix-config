@@ -7,6 +7,7 @@
 {
 
   environment.systemPackages = with pkgs; [
+    swaylock
     grim
     slurp
     wl-clipboard

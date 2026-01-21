@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    doom-emacs = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,7 +63,7 @@
         sway = import ./modules/home/genvs/sway/sway.nix;
         fonts = import ./modules/fonts.nix;
         programs = import ./modules/programs/programs.nix;
-        vscodium = import ./modules/programs/vscodium.nix;
+        vscodium = import ./modules/programs/editors/vscodium.nix;
         qt = import ./modules/programs/qt.nix;
         firefox = import ./modules/programs/firefox.nix;
         steam = import ./modules/programs/steam.nix;

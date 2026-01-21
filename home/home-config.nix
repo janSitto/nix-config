@@ -16,7 +16,7 @@
     ../modules/home/gtk.nix
     ../modules/home/dconf.nix
     ../modules/home/kitty.nix
-    ../modules/home/editors/helix.nix
+    ../modules/home/editors/doom-emacs.nix
     ../modules/home/editors/nvf.nix
   ];
 
