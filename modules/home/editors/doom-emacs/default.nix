@@ -9,7 +9,7 @@
       pkgs.treesit-grammars.with-all-grammars
       pkgs.emacs.pkgs.lsp-bridge
     ];
-    doomDir = ./doom.d;
+    doomDir = ./doom;
     tangleArgs = "--all config.org";
     experimentalFetchTree = true;
 
