@@ -16,14 +16,14 @@
     ../modules/home/gtk.nix
     ../modules/home/dconf.nix
     ../modules/home/kitty.nix
-    ../modules/home/editors/doom-emacs.nix
+    ../modules/home/editors/doom-emacs/default.nix
     ../modules/home/editors/nvf.nix
   ];
 
   xdg.userDirs.enable = false;
 
   home = {
-    username = "${username}";
+    username = "${username}";:
     file.".face".source = "${userpfp}";
     homeDirectory = "/home/${username}";
     stateVersion = "24.11";
