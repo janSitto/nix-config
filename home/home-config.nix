@@ -23,7 +23,7 @@
   xdg.userDirs.enable = false;
 
   home = {
-    username = "${username}";:
+    username = "${username}";
     file.".face".source = "${userpfp}";
     homeDirectory = "/home/${username}";
     stateVersion = "24.11";
