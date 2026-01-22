@@ -58,9 +58,15 @@
 
   };
 
-  fileSystems."/home" = {
-    device = "/data/home";
-    options = [ "bind" ];
+  fileSystems = {
+    "/home" = {
+      device = "/data/home";
+      options = [ "bind" ];
+    };
+    "/var/lib/minecraft" = {
+      device = "/data/var/lib/minecraft";
+      options = [ "bind" ];
+    };
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
@@ -69,6 +75,7 @@
     "nix-command"
     "flakes"
   ];
+
   imports = [
     ./hardware-configuration.nix
   ];
@@ -79,4 +86,3 @@
   };
 
 }
-
