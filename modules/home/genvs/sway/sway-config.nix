@@ -14,6 +14,7 @@
       modifier = "Mod4";
       terminal = "kitty";
       startup = [
+        { command = "swaymsg workspace number 1"; }
         { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.jpg"; }
         { command = "autotiling-rs"; }
         { command = "zen-twilight"; }
@@ -55,10 +56,17 @@
           "${act}+x" = "kill";
           "${act}+f" = "fullscreen";
 
+          "${act}+c" = "sticky toggle";
+
           "${act}+a" = "focus left";
           "${act}+s" = "focus down";
           "${act}+w" = "focus up";
           "${act}+d" = "focus right";
+
+          "${act}+Shift+d" = "resize shrink width 10 px or 10 ppt";
+          "${act}+Shift+w" = "resize grow height 10 px or 10 ppt";
+          "${act}+Shift+s" = "resize shrink height 10 px or 10 ppt";
+          "${act}+Shift+a" = "resize grow width 10 px or 10 ppt";
 
           "${act}+left" = "move left";
           "${act}+down" = "move down";

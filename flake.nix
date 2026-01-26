@@ -120,6 +120,7 @@
             network
             localhost
             grub
+            steam
             timezone
             xdg
             qt
