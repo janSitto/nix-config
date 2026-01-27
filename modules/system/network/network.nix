@@ -1,14 +1,9 @@
 {
-  config,
   pkgs,
   username,
   ...
 }:
 {
-
-  sops.secrets.vpnDomain = {
-    key = "duckdns/domain/vpn";
-  };
 
   networking = {
     networkmanager = {
